@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-15T02:33:00.916Z</updated>
+  <updated>2016-12-15T03:02:29.043Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,14 +20,11 @@
     <link href="http://yoursite.com/2016/12/15/hibernate/"/>
     <id>http://yoursite.com/2016/12/15/hibernate/</id>
     <published>2016-12-15T02:27:20.000Z</published>
-    <updated>2016-12-15T02:33:00.916Z</updated>
+    <updated>2016-12-15T03:02:29.043Z</updated>
     
     <content type="html"><![CDATA[<h1 id="eclipse下hibernate的简单使用"><a href="#eclipse下hibernate的简单使用" class="headerlink" title="eclipse下hibernate的简单使用"></a>eclipse下hibernate的简单使用</h1><hr>
-<blockquote>
-<p>备注：</p>
-</blockquote>
-<hr>
-<ol>
+<p><center><br><img src="/img/三叶草.jpg"></center></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><ol>
 <li>新建java工程</li>
 <li>导入hibernate需要的jar包</li>
 <li>新建hibernate.cfg.xml文件（需要注意url中的数据库名和实体类的映射文件路径）</li>
