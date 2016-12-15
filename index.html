@@ -371,27 +371,22 @@
       
         
           
-            <h1 id="eclipse下hibernate的简单使用"><a href="#eclipse下hibernate的简单使用" class="headerlink" title="eclipse下hibernate的简单使用"></a>eclipse下hibernate的简单使用</h1><hr>
-<p><center><br><img src="/img/三叶草.jpg"></center></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><ol>
-<li>新建java工程</li>
-<li>导入hibernate需要的jar包</li>
-<li>新建hibernate.cfg.xml文件（需要注意url中的数据库名和实体类的映射文件路径）</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; </div><div class="line">    &lt;!DOCTYPE hibernate-configuration PUBLIC    </div><div class="line">              &quot;-//Hibernate/Hibernate Configuration DTD 3.0//EN&quot;    </div><div class="line">              &quot;http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd&quot;&gt; </div><div class="line">             </div><div class="line">    &lt;hibernate-configuration&gt; </div><div class="line">        &lt;session-factory&gt; </div><div class="line">            &lt;property name=&quot;hibernate.connection.driver_class&quot;&gt; </div><div class="line">                com.mysql.jdbc.Driver    </div><div class="line">            &lt;/property&gt; </div><div class="line">            &lt;property name=&quot;hibernate.connection.url&quot;&gt; </div><div class="line">                jdbc:mysql://localhost:3306/zhangrui</div><div class="line">            &lt;/property&gt; </div><div class="line">            &lt;!--  数据库连接设置 --&gt; </div><div class="line">           </div><div class="line">            &lt;property name=&quot;hibernate.connection.username&quot;&gt;root&lt;/property&gt; </div><div class="line">            &lt;property name=&quot;hibernate.connection.password&quot;&gt;123456&lt;/property&gt; </div><div class="line"> </div><div class="line">            &lt;!-- show_sql 生成SQL语句输出到日志以供调式 --&gt; </div><div class="line">            &lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt; </div><div class="line">           </div><div class="line">            &lt;!-- SQL dialect 方言 --&gt; </div><div class="line">            &lt;property name=&quot;hibernate.dialect&quot;&gt; </div><div class="line">                org.hibernate.dialect.MySQLDialect  </div><div class="line">            &lt;/property&gt; </div><div class="line">           </div><div class="line">             &lt;!-- 指定session通过当前执行的线程来跟踪和界定 --&gt;</div><div class="line">            &lt;property name=&quot;hibernate.current_session_contecxt_class&quot; &gt;</div><div class="line">                thread</div><div class="line">            &lt;/property&gt;</div><div class="line"> </div><div class="line">           </div><div class="line">            &lt;!-- 添加实体类的映射文件--&gt; </div><div class="line">            &lt;mapping resource=&quot;model/login.hbm.xml&quot; /&gt; </div><div class="line">    </div><div class="line">        &lt;/session-factory&gt; </div><div class="line">    &lt;/hibernate-configuration&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>创建对应数据库的实体类<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">package model;</div><div class="line"></div><div class="line"></div><div class="line">public class login &#123;</div><div class="line">	   </div><div class="line">    private int id;</div><div class="line">    private String name;</div><div class="line">    private String password;</div><div class="line">   </div><div class="line">    public int getId() &#123;</div><div class="line">        return id;</div><div class="line">    &#125;</div><div class="line">    public void setId(int id) &#123;</div><div class="line">        this.id = id;</div><div class="line">    &#125;</div><div class="line">    public String getName() &#123;</div><div class="line">        return name;</div><div class="line">    &#125;</div><div class="line">    public void setName(String name) &#123;</div><div class="line">        this.name = name;</div><div class="line">    &#125;</div><div class="line">    public String getPassword() &#123;</div><div class="line">        return password;</div><div class="line">    &#125;</div><div class="line">    public void setPassword(String password) &#123;</div><div class="line">        this.password = password;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>5.建立实体类的映射（注意别把包名和表名写错）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; </div><div class="line">    &lt;!DOCTYPE hibernate-mapping PUBLIC </div><div class="line">            &quot;-//Hibernate/Hibernate Mapping DTD 3.0//EN&quot; </div><div class="line">            &quot;http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd&quot;&gt; </div><div class="line">           </div><div class="line">    &lt;hibernate-mapping package=&quot;model&quot;&gt; </div><div class="line">        &lt;class name=&quot;login&quot; table=&quot;login&quot;&gt; </div><div class="line">             &lt;id name=&quot;id&quot; type=&quot;java.lang.Integer&quot;&gt;&lt;/id&gt; </div><div class="line">            &lt;property name=&quot;name&quot; type=&quot;java.lang.String&quot;  /&gt; </div><div class="line">            &lt;property name=&quot;password&quot; type=&quot;java.lang.String&quot; /&gt; </div><div class="line">        &lt;/class&gt; </div><div class="line">    &lt;/hibernate-mapping&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>测试程序</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">package model;</div><div class="line"></div><div class="line">import org.hibernate.Session;</div><div class="line">import org.hibernate.SessionFactory;</div><div class="line">import org.hibernate.cfg.Configuration;</div><div class="line"></div><div class="line">public class test &#123;</div><div class="line">   </div><div class="line">     public static void main(String a[])</div><div class="line">     &#123;</div><div class="line">      login l = new login();</div><div class="line">      l.setId(1);</div><div class="line">      l.setName(&quot;456&quot;);</div><div class="line">      l.setPassword(&quot;456&quot;);</div><div class="line">     </div><div class="line">      Configuration cfg = new Configuration();</div><div class="line">      SessionFactory sf = cfg.configure().buildSessionFactory();</div><div class="line">      Session session = sf.openSession();</div><div class="line">      session.beginTransaction();</div><div class="line">      session.save(l);</div><div class="line">      session.getTransaction().commit();</div><div class="line">      session.close();</div><div class="line">      sf.close();</div><div class="line">      System.out.print(&quot;success!&quot;);</div><div class="line">     &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>7.运行后就会在数据库zhangrui的表login中中增加一行数据</p>
+          eclipse下hibernate的简单使用
 
-          
+
+新建java工程
+导入hibernate需要的jar包
+新建hibernate.cfg.xml文件（需要注意url中的数据库名和实体类的映射文件路径）
+
+123456789101112131415161718192021222324252627282
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/15/hibernate/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -531,35 +526,25 @@
       
         
           
-            <p>MiniDLNA 安装</p>
-<p>1、安装<br>sudoapt-get installminidlna</p>
-<p>2、修改配置</p>
-<blockquote>
-<p>打开配置文件</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/minidlna.conf</div></pre></td></tr></table></figure>
-<blockquote>
-<p>可参考修改的项有：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#port	</div><div class="line">服务端口，默认为8200。如果有防火墙配置，需要开放。</div><div class="line">#media_dir</div><div class="line">媒体目录可以设置多个，如：media_dir=V,/noah/videos（逗号前为类型标识：A音频，P图片，V视频）</div><div class="line">#friendly_name</div><div class="line">服务名称，在其它设备中看到的名称</div><div class="line">#inotify</div><div class="line">设置为true，将自动发现媒体目录中的新文件</div><div class="line">#db_dir=/var/lib/minidlna</div><div class="line">数据库目录，minidlna使用的是sqlite数据库来索引文件</div><div class="line">#listening_ip=192.168.1.106</div><div class="line">服务器IP</div><div class="line">#friendly_name=DLNA</div><div class="line">网络名称，用于其它设备发现当前设备</div></pre></td></tr></table></figure>
-<p>3、启动minidlna服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudoservice minidlna start</div></pre></td></tr></table></figure>
-<p>4、当你修改配置文件及媒体资源更新时，需要强制刷新，以便minidlna将最新的媒体文件进行索引</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudoservice minidlna force-reload</div></pre></td></tr></table></figure>
-<p>5、查看资源个数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://localhost:8200/</div></pre></td></tr></table></figure>
-<p>6、取消minidlna的开机自动启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudoupdate-rc.d -f minidlna remove</div></pre></td></tr></table></figure>
-<p>8、停止minidlna服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudoservice minidlna stop</div></pre></td></tr></table></figure>
-<p>9、停止minidlna所有进程</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudokillall minidlna</div></pre></td></tr></table></figure>
-<p>10、卸载minidlna</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudoapt-get remove --purge minidlna</div></pre></td></tr></table></figure>
-<p>11、搭建好dlna服务器后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">前提：在同一个局域网内</div><div class="line">（1）在windows上访问（使用windows media player）可以找到共享的网络库</div><div class="line">（2）使用手机连接局域网（利用软件或者多屏互动）</div><div class="line">（3）使用电视</div></pre></td></tr></table></figure>
+          MiniDLNA 安装
+1、安装sudoapt-get installminidlna
+2、修改配置
 
-          
+打开配置文件
+
+1vi /etc/minidlna.conf
+
+可参考修改的项有：
+
+1234567891011121314#port	服务端口，默认为8200。如果有防火墙配置，需要开放。#me
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/14/minidlna/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -699,73 +684,17 @@
       
         
           
-            <p>1.简介</p>
-<blockquote>
-<p>SSDP:Simple Sever Discovery Protocol,简单服务发现协议，此协议为网络客户提供一种无需任何配置、管理和维护网络设备服务的机制。此协议采用基于通知和发现路由的多播发现方式实现。协议客户端在保留的多播地址：239.255.255.250：1900（IPV4）发现服务，（IPv6 是：FF0x::C）同时每个设备服务也在此地址上上监听服务发现请求。如果服务监听到的发现请求与此服务相匹配，此服务会使用单播方式响应。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>常见的协议请求消息有两种类型，第一种是服务通知，设备和服务使用此类通知消息声明自己存在；第二种是查询请求，协议客户端用此请求查询某种类型的设备和服务。请求消息中包含设备的特定信息或者某项服务的信息，例如设备类型、标识符和指向设备描述文档的URL地址。</p>
-</blockquote>
-<ol>
-<li>协议的osi模型</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">应用层</th>
-<th style="text-align:center">SSDP</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">HTTPU</td>
-<td style="text-align:center">HTTPMU</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>传输层</strong></td>
-<td style="text-align:center">UDP</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>网络层</strong></td>
-<td style="text-align:center">IP</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>数据链路层</strong></td>
-<td style="text-align:center">以太网</td>
-<td style="text-align:center">…</td>
-</tr>
-</tbody>
-</table>
-<p>3.消息格式</p>
-<blockquote>
-<p>设备查询消息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">M-SEARCH * HTTP/1.1</div><div class="line">HOST: 239.255.255.250:1900</div><div class="line">MAN: &quot;ssdp:discover&quot;</div><div class="line">MX: seconds to delay response</div><div class="line">ST: search target</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>各HTTP协议头的含义简介：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">HOST：设置为协议保留多播地址和端口，必须是：239.255.255.250:1900（IPv4）或FF0x::C(IPv6)</div><div class="line">MAN：设置协议查询的类型，必须是：ssdp:discover</div><div class="line">MX：设置设备响应最长等待时间，设备响应在0和这个值之间随机选择响应延迟的值。这样可以为控制点响应平衡网络负载。</div><div class="line">ST：设置服务查询的目标，它必须是下面的类型：</div><div class="line">    ssdp:all 搜索所有设备和服务 </div><div class="line">    upnp:rootdevice 仅搜索网络中的根设备 </div><div class="line">    uuid:device-UUID 查询UUID标识的设备 </div><div class="line">    urn:schemas-upnp-org:device:device-Type:version 查询device-Type字段指定的设备类型，设备类型和版本由UPNP组织定义。 </div><div class="line">    urn:schemas-upnp-org:service:service-Type:version 查询service-Type字段指定的服务类型，服务类型和版本由UPNP组织定义。</div></pre></td></tr></table></figure>
-<blockquote>
-<p>在设备接收到查询请求并且查询类型（ST字段值）与此设备匹配时，设备必须向多播地址239.255.255.250:1900回应响应消息。典型：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 200 OK</div><div class="line">CACHE-CONTROL: max-age = seconds until advertisement expires</div><div class="line">DATE: when reponse was generated</div><div class="line">EXT:</div><div class="line">LOCATION: URL for UPnP description for root device</div><div class="line">SERVER: OS/Version UPNP/1.0 product/version</div><div class="line">ST: search target</div><div class="line">USN: advertisement UUID</div></pre></td></tr></table></figure>
-<p>各HTTP协议头的含义简介：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CACHE-CONTROL	max-age指定通知消息存活时间，如果超过此时间间隔，控制点可以认为设备不存在</div><div class="line">DATE	指定响应生成的时间</div><div class="line">EXT	向控制点确认MAN头域已经被设备理解</div><div class="line">LOCATION	包含根设备描述得URL地址</div><div class="line">SERVER	饱含操作系统名，版本，产品名和产品版本信息</div><div class="line">ST	内容和意义与查询请求的相应字段相同</div><div class="line">USN	表示不同服务的统一服务名，它提供了一种标识出相同类型服务的能力。</div></pre></td></tr></table></figure>
-<blockquote>
-<p>设备通知消息</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">NOTIFY * HTTP/1.1</div><div class="line">HOST: 239.255.255.250:1900CACHE-CONTROL: max-age = seconds until advertisement expires</div><div class="line">LOCATION: URL for UPnP description for root device</div><div class="line">NT: search target</div><div class="line">NTS: ssdp:alive</div><div class="line">USN: advertisement UUID</div></pre></td></tr></table></figure>
-<p>各HTTP协议头的含义简介：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">HOST	设置为协议保留多播地址和端口，必须是239.255.255.250:1900。</div><div class="line">CACHE-CONTROL	max-age指定通知消息存活时间，如果超过此时间间隔，控制点可以认为设备不存在</div><div class="line">LOCATION	包含根设备描述得URL地址</div><div class="line">NT	在此消息中，NT头必须为服务的服务类型。</div><div class="line">NTS	表示通知消息的子类型，必须为ssdp:alive</div><div class="line">USN	表示不同服务的统一服务名，它提供了一种标识出相同类型服务的能力。</div></pre></td></tr></table></figure>
-<blockquote>
-<p>ssdp:byebye消息</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">NOTIFY * HTTP/1.1</div><div class="line">HOST: 239.255.255.250:1900NT: search target</div><div class="line">NTS: ssdp:byebye</div><div class="line">USN: advertisement UUID</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">各HTTP协议头的含义简介：</div><div class="line">HOST	设置为协议保留多播地址和端口，必须是239.255.255.250:1900</div><div class="line">NT	在此消息中，NT头必须为服务的服务类型。</div><div class="line">NTS	表示通知消息的子类型，必须为ssdp:alive</div><div class="line">USN	表示不同服务的统一服务名，它提供了一种标识出相同类型服务的能力</div></pre></td></tr></table></figure>
-<p>专有设备或服务可以不遵循标准的UPNP模版。但如果设备或服务提供UPNP发现、描述、控制和事件过程的所有对象，它的行为就像一个标准的UPNP设备或服务。为了避免命名冲突，使用专有设备命名时除了UPNP域之外必须包含一个前缀”urn:schemas-upnp-org”。在与标准模版相同时，应该使用整数版本号。但如果与标准模版不同，不可以使用设备复用和徽标。<br>简单设备发现协议不提供高级的查询功能，也就是说，不能完成某个具有某种服务的设备这样的复合查询。在完成设备或者服务发现之后，控制点可以通过设备或服务描述的URL地址完成更为精确的信息查询。</p>
+          1.简介
 
-          
+SSDP:Simple Sever Discovery Protocol,简单服务发现协议，此协议为网络客户提供一种无需任何配置、管理和维护网络设备服务的机制。此协议采用基于通知和发现路由的多播发现方式实现。协议客户端在保留的多播地址：239.255.255.250：1900（IPV4）
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/14/ssdp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -905,12 +834,19 @@
       
         
           
-            <h3 id="新建一个文章"><a href="#新建一个文章" class="headerlink" title="新建一个文章"></a>新建一个文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"blog name"</span></div></pre></td></tr></table></figure>
-<h3 id="开启服务端（可以进行本地测试）"><a href="#开启服务端（可以进行本地测试）" class="headerlink" title="开启服务端（可以进行本地测试）"></a>开启服务端（可以进行本地测试）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<h3 id="将文章md格式生成html格式"><a href="#将文章md格式生成html格式" class="headerlink" title="将文章md格式生成html格式"></a>将文章md格式生成html格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<h3 id="提交文章到github上"><a href="#提交文章到github上" class="headerlink" title="提交文章到github上"></a>提交文章到github上</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+          新建一个文章1$ hexo new "blog name"
+开启服务端（可以进行本地测试）1$ hexo server
+将文章md格式生成html格式1$ hexo generate
+提交文章到github上1$ hexo deploy
 
           
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/13/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1050,12 +986,19 @@
       
         
           
-            <blockquote>
-<p>网易云音乐</p>
-<hr>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=29019227&auto=1&height=66"></iframe></blockquote>
+          
+网易云音乐
+
+
 
           
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/13/tags/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
