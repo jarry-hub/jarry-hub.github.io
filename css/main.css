@@ -1681,7 +1681,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b5a4b6;
+  background: #5dff6a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2440,7 +2440,8 @@ a.search-result {
   overflow: hidden;
 }
 body {
-  background: #f5f7f9;
+  background: url("/images/lol2.jpg");
+  background-attachment: fixed;
 }
 @media (min-width: 992px) {
   .full-image.full-image.full-image {
