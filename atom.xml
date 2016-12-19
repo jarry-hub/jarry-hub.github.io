@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-15T03:02:29.043Z</updated>
+  <updated>2016-12-19T02:21:30.646Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bootstrap</title>
+    <link href="http://yoursite.com/2016/12/19/bootstrap/"/>
+    <id>http://yoursite.com/2016/12/19/bootstrap/</id>
+    <published>2016-12-19T02:20:54.000Z</published>
+    <updated>2016-12-19T02:21:30.646Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-Bootstrap到底是什么？"><a href="#1-Bootstrap到底是什么？" class="headerlink" title="1.Bootstrap到底是什么？"></a>1.Bootstrap到底是什么？</h1><h6 id="它是一个-框架"><a href="#它是一个-框架" class="headerlink" title="它是一个==框架=="></a>它是一个==框架==</h6><h6 id="它用来开发-web应用程序-和-网站前端"><a href="#它用来开发-web应用程序-和-网站前端" class="headerlink" title="它用来开发==web应用程序==和==网站前端=="></a>它用来开发==web应用程序==和==网站前端==</h6><h6 id="它基于-html-css-js"><a href="#它基于-html-css-js" class="headerlink" title="它基于==html css js=="></a>它基于==html css js==</h6><h1 id="2-下载使用bootstrap"><a href="#2-下载使用bootstrap" class="headerlink" title="2.下载使用bootstrap"></a>2.下载使用bootstrap</h1><blockquote>
+<p>（1）下载地址 <a href="http://getbootstrap.com/" target="_blank" rel="external">http://getbootstrap.com/</a><br>（2）有两种：1.预编译的 2.源代码 （这里我们使用预编译的）<br>（3）代码结构目录（js css fonts）  </p>
+</blockquote>
+<h1 id="2-html中使用bootstrap"><a href="#2-html中使用bootstrap" class="headerlink" title="2.html中使用bootstrap"></a>2.html中使用bootstrap</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">   &lt;head&gt;</div><div class="line">      &lt;title&gt;Bootstrap 模板&lt;/title&gt;</div><div class="line">      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</div><div class="line">      &lt;link href=&quot;css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">   &lt;/head&gt;</div><div class="line">   &lt;body&gt;</div><div class="line">      &lt;h1&gt;Hello, world!&lt;/h1&gt;</div><div class="line">      &lt;script src=&quot;https://code.jquery.com/jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">      &lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">   &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h1 id="2-html中注意事项"><a href="#2-html中注意事项" class="headerlink" title="2.html中注意事项"></a>2.html中注意事项</h1><blockquote>
+<p>（1）head中引入bootstrap的css路径<br>（2）bootstrap会用到jquery，需要引入jquery的js库路径<br>（3）在body标签的最后引入（运行速度更快）</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-Bootstrap到底是什么？&quot;&gt;&lt;a href=&quot;#1-Bootstrap到底是什么？&quot; class=&quot;headerlink&quot; title=&quot;1.Bootstrap到底是什么？&quot;&gt;&lt;/a&gt;1.Bootstrap到底是什么？&lt;/h1&gt;&lt;h6 id=&quot;它是一个-
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>hibernate</title>
