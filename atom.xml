@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-21T01:55:09.000Z</updated>
+  <updated>2016-12-22T06:32:31.712Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,401 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css链接</title>
+    <link href="http://yoursite.com/2016/12/22/css%E9%93%BE%E6%8E%A5/"/>
+    <id>http://yoursite.com/2016/12/22/css链接/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:31.712Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="链接状态（注意这里a后边使用”-”号）"><a href="#链接状态（注意这里a后边使用”-”号）" class="headerlink" title="链接状态（注意这里a后边使用”:”号）"></a>链接状态（注意这里a后边使用”:”号）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">未访问链接</div><div class="line">a:link &#123;</div><div class="line">    color: #00ffaa;    </div><div class="line">&#125;</div><div class="line"></div><div class="line">已访问过链接</div><div class="line">a:visited &#123;</div><div class="line">    color: #ffaabb;</div><div class="line">&#125;</div><div class="line"></div><div class="line">鼠标放在链接上</div><div class="line">a:hover &#123;</div><div class="line">    color: #c1b5d2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">鼠标点击的时候</div><div class="line">a:active &#123;</div><div class="line">    color: #cc6611;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="文本修饰"><a href="#文本修饰" class="headerlink" title="文本修饰"></a>文本修饰</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">文本主要是下划线，和链接状态搭配使用</div><div class="line">text-decoration: none;</div><div class="line">text-decoratioon: underline;</div></pre></td></tr></table></figure>
+<h1 id="背景颜色"><a href="#背景颜色" class="headerlink" title="背景颜色"></a>背景颜色</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">也是和链接状态搭配使用</div><div class="line">background-color: #00ffff</div></pre></td></tr></table></figure>
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a:hover &#123;</div><div class="line">    color: #c1b5d2;</div><div class="line">    text-decoratioon: underline;</div><div class="line">    background-color: #00ffff;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;链接状态（注意这里a后边使用”-”号）&quot;&gt;&lt;a href=&quot;#链接状态（注意这里a后边使用”-”号）&quot; class=&quot;headerlink&quot; title=&quot;链接状态（注意这里a后边使用”:”号）&quot;&gt;&lt;/a&gt;链接状态（注意这里a后边使用”:”号）&lt;/h1&gt;&lt;figu
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css分组和嵌套</title>
+    <link href="http://yoursite.com/2016/12/22/css%E5%88%86%E7%BB%84%E5%92%8C%E5%B5%8C%E5%A5%97/"/>
+    <id>http://yoursite.com/2016/12/22/css分组和嵌套/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:48.603Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><blockquote>
+<p>减少代码的书写</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>逗号隔开，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p,h1,h2 &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="嵌套的选择器"><a href="#嵌套的选择器" class="headerlink" title="嵌套的选择器"></a>嵌套的选择器</h1><blockquote>
+<p>如果有很多的p段落，但其中一部分是有class=”abc”,则可以这么写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.abc p&#123;</div><div class="line">    color: green;</div><div class="line">&#125;</div><div class="line"></div><div class="line">这样就可以只改变class为abc，标签为p的元素了。</div><div class="line">注意这里是空格隔开哦。</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;作用&quot;&gt;&lt;a href=&quot;#作用&quot; class=&quot;headerlink&quot; title=&quot;作用&quot;&gt;&lt;/a&gt;作用&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;减少代码的书写&lt;/p&gt;
+&lt;h1 id=&quot;使用方法&quot;&gt;&lt;a href=&quot;#使用方法&quot; class=&quot;headerli
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css填充</title>
+    <link href="http://yoursite.com/2016/12/22/css%E5%A1%AB%E5%85%85/"/>
+    <id>http://yoursite.com/2016/12/22/css填充/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:43.966Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是填充"><a href="#什么是填充" class="headerlink" title="什么是填充"></a>什么是填充</h1><blockquote>
+<p>填充（padding）定义元素内容和元素边框之间的区域</p>
+<h1 id="填充需要注意的"><a href="#填充需要注意的" class="headerlink" title="填充需要注意的"></a>填充需要注意的</h1><p>填充相当于内边距<br>填充的单位 px pt em 等等<br>如果没有指定填充边距的值，那么填充区域就被元素内容的背景色霸占啦。</p>
+<h1 id="填充的属性"><a href="#填充的属性" class="headerlink" title="填充的属性"></a>填充的属性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">padding-top: 20px;</div><div class="line">padding-bottom: 20px;</div><div class="line">padding-left: 20px;</div><div class="line">padding-right: 20px;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>#填充简写(类似于外边距margin)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">padding:20px 30px 40px 50px;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是填充&quot;&gt;&lt;a href=&quot;#什么是填充&quot; class=&quot;headerlink&quot; title=&quot;什么是填充&quot;&gt;&lt;/a&gt;什么是填充&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;填充（padding）定义元素内容和元素边框之间的区域&lt;/p&gt;
+&lt;h1 id=&quot;填充需要注
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css外边距</title>
+    <link href="http://yoursite.com/2016/12/22/css%E5%A4%96%E8%BE%B9%E8%B7%9D/"/>
+    <id>http://yoursite.com/2016/12/22/css外边距/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:33.767Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="外边距的作用"><a href="#外边距的作用" class="headerlink" title="外边距的作用"></a>外边距的作用</h1><blockquote>
+<p>定义元素周围的空间</p>
+<h1 id="外边距的解释"><a href="#外边距的解释" class="headerlink" title="外边距的解释"></a>外边距的解释</h1><p>margin没有背景颜色，是完全透明的<br>margin可以随意的改变元素的上下左右边距<br>margin 可以使用负值，重叠的内容<br>单位可以是px % cm等</p>
+<h1 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h1></blockquote>
+<h2 id="调节上下左右边距的用法"><a href="#调节上下左右边距的用法" class="headerlink" title="调节上下左右边距的用法"></a>调节上下左右边距的用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">margin-top: 100px;</div><div class="line">margin-bottom: 20px;</div><div class="line">margin-left: 10px;</div><div class="line">margin0right: 10px;</div></pre></td></tr></table></figure>
+<h2 id="当然margin也可以简写"><a href="#当然margin也可以简写" class="headerlink" title="当然margin也可以简写"></a>当然margin也可以简写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">如果只有一个值，则表示： 上下左右的值</div><div class="line">margin: 10px;</div><div class="line"></div><div class="line">如果有两个值，则表示：上下，左右的值</div><div class="line">margin: 10px 20px;</div><div class="line"></div><div class="line">如果有三个值，则表示：上，左右，下的值</div><div class="line">margin: 10px 20px 30px;</div><div class="line"></div><div class="line">如果有四个值，当然是:上,下,左,右啦</div><div class="line">margin: 10px 20px 30px 40px;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;外边距的作用&quot;&gt;&lt;a href=&quot;#外边距的作用&quot; class=&quot;headerlink&quot; title=&quot;外边距的作用&quot;&gt;&lt;/a&gt;外边距的作用&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;定义元素周围的空间&lt;/p&gt;
+&lt;h1 id=&quot;外边距的解释&quot;&gt;&lt;a href=&quot;#外
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css字体</title>
+    <link href="http://yoursite.com/2016/12/22/css%E5%AD%97%E4%BD%93/"/>
+    <id>http://yoursite.com/2016/12/22/css字体/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:27.432Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="字体系列"><a href="#字体系列" class="headerlink" title="字体系列"></a>字体系列</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">font-family: &quot;Times New Roman&quot;, Times, serif; 这三个是一个字体组合  </div><div class="line">可查阅使用更多的字体组合</div></pre></td></tr></table></figure>
+<h1 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">font-style: normal; 正常</div><div class="line">font-style: italic; 斜体</div><div class="line">font-style: oblique;类似斜体</div></pre></td></tr></table></figure>
+<h1 id="字体大小"><a href="#字体大小" class="headerlink" title="字体大小"></a>字体大小</h1><blockquote>
+<p>设置字体大小像素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">font-size: 10px;</div></pre></td></tr></table></figure></p>
+<p>使用em来设置字体大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">font-size: 1.5em;</div></pre></td></tr></table></figure></p>
+<p>使用百分比来设置字体大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">font-size: 100%;</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;字体系列&quot;&gt;&lt;a href=&quot;#字体系列&quot; class=&quot;headerlink&quot; title=&quot;字体系列&quot;&gt;&lt;/a&gt;字体系列&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css样式表</title>
+    <link href="http://yoursite.com/2016/12/22/css%E6%A0%B7%E5%BC%8F%E8%A1%A8/"/>
+    <id>http://yoursite.com/2016/12/22/css样式表/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:35.348Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="id和class选择器"><a href="#id和class选择器" class="headerlink" title="id和class选择器"></a>id和class选择器</h1><blockquote>
+<p>id使用”#”来定义，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#abc &#123;</div><div class="line">    text-align: center;</div><div class="line">    color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>class使用”.”来定义，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.abc &#123;</div><div class="line">    text-align: center;</div><div class="line">    color: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>另外还可以指定元素来使用class，如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p.abc &#123;</div><div class="line">    color: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="样式分为：内部，外部，内联，多重"><a href="#样式分为：内部，外部，内联，多重" class="headerlink" title="样式分为：内部，外部，内联，多重"></a>样式分为：内部，外部，内联，多重</h1><h2 id="外部样式表-常用-："><a href="#外部样式表-常用-：" class="headerlink" title="外部样式表(常用) ："></a><strong>外部样式表(常用)</strong> ：</h2><p>举例:<br>mycss.css中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">hr &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p &#123;</div><div class="line">    margin-left: 20px;    </div><div class="line">&#125;</div><div class="line"></div><div class="line">body &#123;</div><div class="line">    background-image: url(&quot;/img/abc.jpg&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>myhtml.html中引用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/mycss.css&quot;&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="内部样式表-："><a href="#内部样式表-：" class="headerlink" title="内部样式表 ："></a><strong>内部样式表</strong> ：</h2><p>举例:<br>html中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line"></div><div class="line">&lt;style&gt;</div><div class="line">hr &#123;</div><div class="line">    color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p &#123;</div><div class="line">    margin-left: 20px;    </div><div class="line">&#125;</div><div class="line"></div><div class="line">body &#123;</div><div class="line">    background-image: url(&quot;/img/abc.jpg&quot;);</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<h2 id="内联样式表-："><a href="#内联样式表-：" class="headerlink" title="内联样式表 ："></a><strong>内联样式表</strong> ：</h2><p>举例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;p style=&quot;color=red;margin-left:20px&quot;&gt;这是一个段落&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="多重样式表-："><a href="#多重样式表-：" class="headerlink" title="多重样式表 ："></a><strong>多重样式表</strong> ：</h2><p><strong>含义</strong>：指的是相同的元素被不同的样式表所定义。<br><strong>注意的问题</strong>：使用样式表的优先级</p>
+<p><strong>优先级</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">低| 浏览器缺省设置</div><div class="line">中| 外部样式表</div><div class="line">中| 内部样式表（位于 &lt;head&gt; 标签内部）</div><div class="line">高| 内联样式（在 HTML 元素内部）</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;id和class选择器&quot;&gt;&lt;a href=&quot;#id和class选择器&quot; class=&quot;headerlink&quot; title=&quot;id和class选择器&quot;&gt;&lt;/a&gt;id和class选择器&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;id使用”#”来定义，如下：&lt;br&gt;&lt;fi
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css文本</title>
+    <link href="http://yoursite.com/2016/12/22/css%E6%96%87%E6%9C%AC/"/>
+    <id>http://yoursite.com/2016/12/22/css文本/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:34.766Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">color: #00ffaa;</div></pre></td></tr></table></figure>
+<h1 id="文本对齐方式"><a href="#文本对齐方式" class="headerlink" title="文本对齐方式"></a>文本对齐方式</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1) text-align: center;     居中</div><div class="line">(2) text-align: left;       左对齐</div><div class="line">(3) text-align: justify;    宽度相等，左右边距对齐</div></pre></td></tr></table></figure>
+<h1 id="文本修饰"><a href="#文本修饰" class="headerlink" title="文本修饰"></a>文本修饰</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1) text-decoration: overline;  字体上边上划线</div><div class="line">(2) text-decoration：line-through;  字体中间删除线</div><div class="line">(3) text-decoration：underline  字体下边下划线</div></pre></td></tr></table></figure>
+<h1 id="文本转换"><a href="#文本转换" class="headerlink" title="文本转换"></a>文本转换</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1)text-transform: uppercase;  全部转换为大写</div><div class="line">(2)text-transform: lowercase;  全部转换为小写</div><div class="line">(3)text-transform: capitalize; 全部转换为首字母大写</div></pre></td></tr></table></figure>
+<h1 id="文本缩进（指定的是文本第一行的缩进）"><a href="#文本缩进（指定的是文本第一行的缩进）" class="headerlink" title="文本缩进（指定的是文本第一行的缩进）"></a>文本缩进（指定的是文本第一行的缩进）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text-indent: 50px;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>还有更多的文本操作属性，在实际的代码书写过程中去熟悉。。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;文本颜色&quot;&gt;&lt;a href=&quot;#文本颜色&quot; class=&quot;headerlink&quot; title=&quot;文本颜色&quot;&gt;&lt;/a&gt;文本颜色&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css盒子模型</title>
+    <link href="http://yoursite.com/2016/12/22/css%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://yoursite.com/2016/12/22/css盒子模型/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:35.873Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是盒子模型"><a href="#什么是盒子模型" class="headerlink" title="什么是盒子模型"></a>什么是盒子模型</h1><blockquote>
+<p>通俗的讲就是布局<br>一个盒子模型包括（从外到内）：边距 边框 填充 内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">margin 外边距；</div><div class="line">border 边框；</div><div class="line">padding 填充；</div><div class="line">content 内容；</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="实际使用中如何计算？"><a href="#实际使用中如何计算？" class="headerlink" title="实际使用中如何计算？"></a>实际使用中如何计算？</h1><h2 id="宽度"><a href="#宽度" class="headerlink" title="宽度"></a>宽度</h2><blockquote>
+<p>实际总宽度= 左边距 + 右边距 + 左边框 + 右边框+  左填充 + 右填充 +内容宽度；</p>
+<h2 id="长度"><a href="#长度" class="headerlink" title="长度"></a>长度</h2><p>实际总高度= 上边距 + 下边距 +  上边框 + 下边框+  上填充 + 下填充 +内容高度；</p>
+</blockquote>
+<h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><blockquote>
+<p>如 只有300像素的空间，我们设置300像素的元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">width: 250px;</div><div class="line">border: 10px;</div><div class="line">margin: 5px;</div><div class="line">padding: 10px;</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是盒子模型&quot;&gt;&lt;a href=&quot;#什么是盒子模型&quot; class=&quot;headerlink&quot; title=&quot;什么是盒子模型&quot;&gt;&lt;/a&gt;什么是盒子模型&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;通俗的讲就是布局&lt;br&gt;一个盒子模型包括（从外到内）：边距 边框 填充 内
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css背景</title>
+    <link href="http://yoursite.com/2016/12/22/css%E8%83%8C%E6%99%AF/"/>
+    <id>http://yoursite.com/2016/12/22/css背景/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:36.472Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CSS背景"><a href="#CSS背景" class="headerlink" title="CSS背景"></a>CSS背景</h1><blockquote>
+<p>background-color<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    background-color: #00ffaa;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>background-image<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    background-image: url(&quot;/img/abc.jpg&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>background-repeat（平铺）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    background-repeat: no-repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>background-attachment(背景是否随着页面其它部分滚动而滚动,默认scroll滚动,fixed固定，inherit继承父元素)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    background-attachment: fixed; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>background-position（设定背景的起始位置默认0% 0%）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    background-position: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>背景属性可以简写，如下：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    background: #ffffff url(&quot;img/abc.jpg&quot;) no-repeat fixed center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CSS背景&quot;&gt;&lt;a href=&quot;#CSS背景&quot; class=&quot;headerlink&quot; title=&quot;CSS背景&quot;&gt;&lt;/a&gt;CSS背景&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;background-color&lt;br&gt;&lt;figure class=&quot;highlight 
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css表格</title>
+    <link href="http://yoursite.com/2016/12/22/css%E8%A1%A8%E6%A0%BC/"/>
+    <id>http://yoursite.com/2016/12/22/css表格/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:37.037Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="表格边框"><a href="#表格边框" class="headerlink" title="表格边框"></a>表格边框</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">table, th, td &#123;</div><div class="line">    border: 1px, solid, black;</div><div class="line">    border-collapse: collapse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="表格高度宽度"><a href="#表格高度宽度" class="headerlink" title="表格高度宽度"></a>表格高度宽度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">table &#123;</div><div class="line">    width: 20px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">th &#123;</div><div class="line">    heigth: 20px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="表格文字对齐"><a href="#表格文字对齐" class="headerlink" title="表格文字对齐"></a>表格文字对齐</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">td &#123;</div><div class="line">    text-align: center;</div><div class="line">    vertical-align: mid;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="表格填充"><a href="#表格填充" class="headerlink" title="表格填充"></a>表格填充</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">table, th, td &#123;</div><div class="line">    padding: 20px; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="表格颜色"><a href="#表格颜色" class="headerlink" title="表格颜色"></a>表格颜色</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">th &#123;</div><div class="line">    background-color: red;</div><div class="line">    color: white;</div><div class="line">&#125;</div><div class="line"></div><div class="line">td &#123;</div><div class="line">    background-color: blue;</div><div class="line">    color: white;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="设置表格的标题"><a href="#设置表格的标题" class="headerlink" title="设置表格的标题"></a>设置表格的标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;table&gt;</div><div class="line">&lt;caption&gt;table name&lt;/caption&gt;</div><div class="line">&lt;/table&gt;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;表格边框&quot;&gt;&lt;a href=&quot;#表格边框&quot; class=&quot;headerlink&quot; title=&quot;表格边框&quot;&gt;&lt;/a&gt;表格边框&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css列表</title>
+    <link href="http://yoursite.com/2016/12/22/css%E5%88%97%E8%A1%A8/"/>
+    <id>http://yoursite.com/2016/12/22/css列表/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:45.376Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>列表分为有序列表(ul)和无序列表（ol）<br>列表可以设置的属性： 标记类型，标记图像等</p>
+<h1 id="标记类型"><a href="#标记类型" class="headerlink" title="标记类型"></a>标记类型</h1><p>html中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;无序列表实例:&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;ul class=&quot;a&quot;&gt;</div><div class="line">  &lt;li&gt;Coffee&lt;/li&gt;</div><div class="line">  &lt;li&gt;Tea&lt;/li&gt;</div><div class="line">  &lt;li&gt;Coca Cola&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;p&gt;有序列表实例:&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;ol class=&quot;b&quot;&gt;</div><div class="line">  &lt;li&gt;Coffee&lt;/li&gt;</div><div class="line">  &lt;li&gt;Tea&lt;/li&gt;</div><div class="line">  &lt;li&gt;Coca Cola&lt;/li&gt;</div><div class="line">&lt;/ol&gt;</div></pre></td></tr></table></figure></p>
+<p>css中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ul.a &#123;</div><div class="line">    list-style-type: circle;         空心圆</div><div class="line">&#125;</div><div class="line"></div><div class="line">ol.b &#123;</div><div class="line">    list-style-type: lower-alpha;    小写字母</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="标记图像"><a href="#标记图像" class="headerlink" title="标记图像"></a>标记图像</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ul &#123;</div><div class="line">    list-style-image: url(&apos;abc.gif&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="缩写的写法"><a href="#缩写的写法" class="headerlink" title="缩写的写法"></a>缩写的写法</h1><blockquote>
+<p>规定缩写的顺序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. list-style-type(标志的类型)</div><div class="line">2. list-style-position(标志的位置：inside,outside,inerit)</div><div class="line">3. list-style-image（标志的图像）</div></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ul</div><div class="line">&#123;</div><div class="line">    list-style: square url(&quot;sqpurple.gif&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;列表分为有序列表(ul)和无序列表（ol）&lt;br&gt;列表可以设置的属性： 标记类型，标记图像等&lt;/p&gt;
+&lt;h1 id=&quot;标记类型&quot;&gt;&lt;a href=&quot;#标记类型&quot; class=&quot;headerlink&quot; title=&quot;标记类型&quot;&gt;&lt;/a&gt;标记类型&lt;/h
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css边框</title>
+    <link href="http://yoursite.com/2016/12/22/css%E8%BE%B9%E6%A1%86/"/>
+    <id>http://yoursite.com/2016/12/22/css边框/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:38.585Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="边框可以自定义-样式-宽度-颜色-各边设置样式"><a href="#边框可以自定义-样式-宽度-颜色-各边设置样式" class="headerlink" title="边框可以自定义   样式,宽度,颜色,各边设置样式"></a>边框可以自定义   样式,宽度,颜色,各边设置样式</h1><h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">border-style: none;     无边框</div><div class="line">border-style: dotted;   虚线边框</div><div class="line">border-style: dashed;   粗虚线边框</div><div class="line">border-style: solid;    实线边框</div><div class="line">border-style: double;   双边框</div><div class="line">border-style: groove;   凹槽边框</div><div class="line">border-style: ridge;    垄状边框     </div><div class="line">border-style: inset；   嵌入边框</div><div class="line">border-style: hidden    隐藏边框</div></pre></td></tr></table></figure>
+<h2 id="宽度"><a href="#宽度" class="headerlink" title="宽度"></a>宽度</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">border-width:5px</div></pre></td></tr></table></figure>
+<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">border-color: red;</div></pre></td></tr></table></figure>
+<h2 id="各边设置"><a href="#各边设置" class="headerlink" title="各边设置"></a>各边设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">border-top-style: none;     上</div><div class="line">border-bottom-style: none;  下</div><div class="line">border-left-style: solid;   左</div><div class="line">border-right: dotted;       右</div></pre></td></tr></table></figure>
+<h2 id="边框也可以简写"><a href="#边框也可以简写" class="headerlink" title="边框也可以简写"></a>边框也可以简写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">border： 5px solid red;</div><div class="line"></div><div class="line">可以简写一次性设置四个边</div><div class="line">border-color: red yellow blue black;</div><div class="line">border-width: 2px 5px 9px 10px;</div><div class="line">border-style:solid dotted none dotted;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;边框可以自定义-样式-宽度-颜色-各边设置样式&quot;&gt;&lt;a href=&quot;#边框可以自定义-样式-宽度-颜色-各边设置样式&quot; class=&quot;headerlink&quot; title=&quot;边框可以自定义   样式,宽度,颜色,各边设置样式&quot;&gt;&lt;/a&gt;边框可以自定义   样式,宽度
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css轮廓</title>
+    <link href="http://yoursite.com/2016/12/22/css%E8%BD%AE%E5%BB%93/"/>
+    <id>http://yoursite.com/2016/12/22/css轮廓/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:32:37.890Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是轮廓（outline）"><a href="#什么是轮廓（outline）" class="headerlink" title="什么是轮廓（outline）"></a>什么是轮廓（outline）</h1><blockquote>
+<p>轮廓是绘制于元素周围的一条线，位于边框边缘的外围</p>
+<h1 id="轮廓的作用"><a href="#轮廓的作用" class="headerlink" title="轮廓的作用"></a>轮廓的作用</h1><p>可以起到突出元素的作用</p>
+<h1 id="轮廓的属性"><a href="#轮廓的属性" class="headerlink" title="轮廓的属性"></a>轮廓的属性</h1><p>包括 样式，颜色，外边框的宽度</p>
+</blockquote>
+<h2 id="轮廓的颜色"><a href="#轮廓的颜色" class="headerlink" title="轮廓的颜色"></a>轮廓的颜色</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">outline-color: #00ffff;</div></pre></td></tr></table></figure>
+<h2 id="轮廓的样式"><a href="#轮廓的样式" class="headerlink" title="轮廓的样式"></a>轮廓的样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">outline-style: solid;</div></pre></td></tr></table></figure>
+<h2 id="外边框的宽度"><a href="#外边框的宽度" class="headerlink" title="外边框的宽度"></a>外边框的宽度</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">outline-width: 20px;</div></pre></td></tr></table></figure>
+<h2 id="也可以简写"><a href="#也可以简写" class="headerlink" title="也可以简写"></a>也可以简写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">outline: red solid 20px;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是轮廓（outline）&quot;&gt;&lt;a href=&quot;#什么是轮廓（outline）&quot; class=&quot;headerlink&quot; title=&quot;什么是轮廓（outline）&quot;&gt;&lt;/a&gt;什么是轮廓（outline）&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;轮廓是绘制于元素周
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>css基础篇（一）</title>
