@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-22T06:46:23.192Z</updated>
+  <updated>2017-01-17T02:22:58.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,184 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker</title>
+    <link href="http://yoursite.com/2017/01/17/docker/"/>
+    <id>http://yoursite.com/2017/01/17/docker/</id>
+    <published>2017-01-17T02:13:16.000Z</published>
+    <updated>2017-01-17T02:22:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker知识总结"><a href="#Docker知识总结" class="headerlink" title="Docker知识总结"></a>Docker知识总结</h1><hr>
+<p><center><br><img src="/img/docker.jpg" style="border:0"></center></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="Docker是什么？"><a href="#Docker是什么？" class="headerlink" title="Docker是什么？"></a>Docker是什么？</h2><p>docker是一个基于Go语言的开源的应用容器引擎</p>
+<h2 id="Docker能做什么？"><a href="#Docker能做什么？" class="headerlink" title="Docker能做什么？"></a>Docker能做什么？</h2><p>开发者可以打包他们的应用以及依赖包到Docker容器中。<br>打包后docker容器可以跑在任何流行的linux机器上，实现了虚拟化。<br>docker容器性能开销很低，并且相互之间没有接口。</p>
+<h2 id="Docker的应用-场景"><a href="#Docker的应用-场景" class="headerlink" title="Docker的应用 场景"></a>Docker的应用 场景</h2><p>（1）web应用的自动化打包和发布<br>（2）自动化测试的持续集成和发布<br>（3）…</p>
+<h2 id="Docker的优势"><a href="#Docker的优势" class="headerlink" title="Docker的优势"></a>Docker的优势</h2><p><strong>（1）节省时间，简化程序员操作</strong><br>开发者可以将自己的成果放在docker中管理，过去需要数天、 数周的任务，在docker容器的处理下，只需要数秒就可以完成。<br><strong>（2）节省开支</strong><br>云计算时代到来，使开发者不必为了追求效果而配置高额的硬件，Docker 改变了高性能必然高价格的思维定势。Docker 与云的结合，让云空间得到更充分的利用。不仅解决了硬件管理的问题，也改变了虚拟化的方式。<br><strong>（3）避免选择恐惧症</strong><br>如果你有选择恐惧症，还是资深患者。Docker 帮你    打包你的纠结！比如 Docker 镜像；Docker 镜像中包含了运行环境和配置，所以 Docker 可以简化部署多种应用实例工作。比如 Web 应用、后台应用、数据库应用、大数据应用比如 Hadoop 集群、消息队列等等都可以打包成一个镜像部署。  </p>
+<h2 id="Docker架构"><a href="#Docker架构" class="headerlink" title="Docker架构"></a>Docker架构</h2><p>（1）Docker 使用客户端-服务器 (C/S) 架构模式，使用远程API来管理和创建Docker容器<br>（2）Docker 容器通过 Docker 镜像来创建。<br>（3）Docker的底层使用了LXC来实现的。LXC将Linux进程沙盒化，使得进程之间相互隔离，并且能够控制各进程的资源分配。<br>（4）在LXC的基础之上，Docker提供了一系列更强的功能。</p>
+<h2 id="Docker的安装（centos下使用yum安装）"><a href="#Docker的安装（centos下使用yum安装）" class="headerlink" title="Docker的安装（centos下使用yum安装）"></a>Docker的安装（centos下使用yum安装）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">（1）uname -a 要求系统为64位、系统内核版本为 3.10 以上。  </div><div class="line">（2）安装命令：yum -y install docker</div><div class="line">（3）启动命令：service docker start</div><div class="line">（4）测试命令：docker run hello-world</div><div class="line"></div><div class="line">也可以使用脚本来安装：curl -fsSL https://get.docker.com/ | sh</div></pre></td></tr></table></figure>
+<h2 id="Docker-hello-world"><a href="#Docker-hello-world" class="headerlink" title="Docker hello world"></a>Docker hello world</h2><p>docker允许在容器内运行应用程序，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run ubuntu:15.10 /bin/echo &quot;hello world&quot;</div><div class="line">意思是：docker 利用镜像ubuntu..创建一个新容器，并在容器中运行打印hello world的命令。</div></pre></td></tr></table></figure></p>
+<h2 id="Docker容器使用"><a href="#Docker容器使用" class="headerlink" title="Docker容器使用"></a>Docker容器使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">docker run参数</div><div class="line">-d:让容器在后台运行</div><div class="line">-P:将容器内部使用的网络端口映射到我们使用的主机上。</div><div class="line">-t:在新容器内指定一个伪终端或终端。</div><div class="line">-i:允许你对容器内的标准输入 (STDIN) 进行交互。</div><div class="line">详细使用docker run --help来查阅</div><div class="line"></div><div class="line">docker run               运行一个容器    </div><div class="line">docker ps                查看正在运行的容器</div><div class="line">docker logs id/name      运行程序的日志</div><div class="line">docker stop name         停止一个容器</div><div class="line">docker top  name         查看容器中的进程</div><div class="line">docker inspect name      查看容器的底层信息</div><div class="line">docker start name        重启一个容器</div><div class="line">docker rm name           删除一个容器</div></pre></td></tr></table></figure>
+<h2 id="Docker镜像使用"><a href="#Docker镜像使用" class="headerlink" title="Docker镜像使用"></a>Docker镜像使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">docker images   列出本地主机上的镜像</div><div class="line"></div><div class="line">镜像信息说明：</div><div class="line">REPOSTITORY：   表示镜像的仓库源</div><div class="line">TAG：           镜像的标签</div><div class="line">IMAGE ID：      镜像ID</div><div class="line">CREATED：       镜像创建时间</div><div class="line">SIZE：          镜像大小</div><div class="line"></div><div class="line">docker pull   镜像名 可以从远程库里下载镜像（有网络）</div><div class="line">docker search 镜像名  可以在远程库中搜索镜像</div><div class="line">docker build  从零开始来创建一个新的镜像</div><div class="line">docker tag：  为镜像添加一个新的标签。</div><div class="line">如：docker tag 860c279d2fec runoob/centos:dev</div><div class="line"></div><div class="line">给id为860c279d2fec，名字为runoob/centos的镜像添加新的标签：tag</div></pre></td></tr></table></figure>
+<h2 id="Docker容器连接"><a href="#Docker容器连接" class="headerlink" title="Docker容器连接"></a>Docker容器连接</h2><p>（1）绑定端口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">docker run -d -p 5000:5000 镜像名 命令</div><div class="line">意思是：端口5000绑定主机端口5000</div><div class="line">大写  -P, --publish-all=false     Publish all exposed ports to random ports  容器内部端口随机映射到主机的端口（随机写）。</div><div class="line">小写  -p, --publish=[]            Publish a container&apos;s port(s) to the host  容器内部端口绑定到指定的主机端口（自定义写）。</div><div class="line"></div><div class="line">使用docker ps或docker port查看端口</div></pre></td></tr></table></figure></p>
+<p>（2）绑定ip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tcp: docker run -d -p 127.0.0.1:5001:5002 镜像名 命令</div><div class="line">udp: docker run -d -p 127.0.0.1:5001:5002/udp 镜像名 命令</div></pre></td></tr></table></figure></p>
+<p>（3）容器连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">--name 名字</div><div class="line">我们可以使用--name标识来命名容器</div><div class="line">docker ps 查看命名</div></pre></td></tr></table></figure></p>
+<h2 id="在Docker中安装应用示例（redis）"><a href="#在Docker中安装应用示例（redis）" class="headerlink" title="在Docker中安装应用示例（redis）"></a>在Docker中安装应用示例（redis）</h2><p>Docker 中可以安装各种服务mysql,php,tomcat,python,apache等等..  这里使用redis举例说明</p>
+<blockquote>
+<p>两种方法  </p>
+</blockquote>
+<p>（1）通过 Dockerfile 构建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">首先，创建目录</div><div class="line">mkdir -p ~/redis ~/redis/data</div><div class="line">然后，进入创建的redis目录，创建Dockerfile</div><div class="line">然后，docker build  -t redis:3.2</div><div class="line">创建完成 查看: docker images</div></pre></td></tr></table></figure></p>
+<p>（2）docker pull redis:3.2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pull  redis:3.2 从远程库下载</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用redis镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -p 6379:6379 -v $PWD/data:/data  -d redis:3.2 redis-server --appendonly yes</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Docker知识总结&quot;&gt;&lt;a href=&quot;#Docker知识总结&quot; class=&quot;headerlink&quot; title=&quot;Docker知识总结&quot;&gt;&lt;/a&gt;Docker知识总结&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;/img/docker
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>angular-js</title>
+    <link href="http://yoursite.com/2016/12/28/angular-js/"/>
+    <id>http://yoursite.com/2016/12/28/angular-js/</id>
+    <published>2016-12-28T01:13:35.000Z</published>
+    <updated>2017-01-17T02:16:39.826Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>(1) angularjs是一个js的框架，使用js编写，可以通过”script”标签添加到html页面<br>(2) angularjs通过指令（ng-xx)扩展了<html>，并通过表达式”“绑定数据到html  </html></p>
+<h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>(1) 使得开发单一页面应用程序变得更加容易<br>(2) 可以把应用程序数据绑定到html元素<br>(3) 可以克隆和重复html元素，如列表，表格等<br>(4) 可以隐藏和显示html元素<br>(5) 可以在html元素后添加代码<br>(6) 支持输入验证  </p>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><p>  指令指的是以ng为前缀的html属性,但有时又显示 data-ng-，这是为了支持html5<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-init</div><div class="line">初始化angularjs应用程序变量，一般不建议使用</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-model</div><div class="line">将表单控件与当前作用域的属性进行绑定</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-app</div><div class="line">这个是必须的，使用该指令自动启动一个angularjs应用，指定应用程序的跟元素，通常放在网页的跟元素，自动引导每个html文档</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-controller</div><div class="line">用来定义一个控制器</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ng-form</div><div class="line">用来定义一个表单，通常用来验证参数，</div><div class="line">和以下标签一起使用：</div><div class="line">ng-valid   有效的</div><div class="line">ng-invalid 无效的</div><div class="line">ng-pristine 原始</div><div class="line">ng-dirty   脏的</div><div class="line">ng-submitted 提交的</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-disabled</div><div class="line">我们可以在AngularJS中通过表达式返回值true/false令其生效。禁用表单输入字段。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-readonly</div><div class="line">通过表达式返回true/false将表单输入字段设为只读</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-checked</div><div class="line">设置是否选中复选框，其中ng-true-value=&quot;&quot;和ng-false-value=&quot;&quot;可以设置选中和不选中的值</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-selected</div><div class="line">给&lt;selected&gt;里边的&lt;option&gt;使用</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ng-show/ng-hide</div><div class="line">根据表达式，显示或隐藏Html元素</div><div class="line">注意是隐藏，而不是移除，如果想要移除，请使用ng-if</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-change</div><div class="line">用来设置input/select等内容发生变化时的事件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#125;&#125;</div><div class="line">其实这也是一个指令，和ng-bind的功能差不多</div><div class="line">但页面渲染慢的时候会被看到，他的性能不如ng-bind，但是优点是使用方便</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-cloak</div><div class="line">会隐藏内部元素，直到路由调用对应的页面</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ng-switch</div><div class="line">指令中包含：ng-switch-on, ng-switch-when, ng-switch-default功能类似与switch</div><div class="line">on表示要判断的值</div><div class="line">when指条件符合将显示这个元素</div><div class="line">default就是条件都不符合的时候显示的元素</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ng-repeat</div><div class="line">用来遍历集合（数组），给每个元素生成模版实例，每个实例的作用域中可以用一些特殊属性如：</div><div class="line">$index, $first, $last, $middle， even</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ng-href</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-src</div><div class="line">指表达式生效前不要加载该资源</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-click</div><div class="line">点击事件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ngkeyup/ngKeydown/ngKeypress</div><div class="line">键盘事件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ngMousedown/ngMouseseenter/mgMouseleave/ngMousemove/ngMouseover/ng-Mouseup</div><div class="line">鼠标事件</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ngTrim</div><div class="line">去除左右空格</div></pre></td></tr></table></figure>
+<h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1><h2 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h2><blockquote>
+<p>使controller更轻量，更易于维护</p>
+<h2 id="自带服务"><a href="#自带服务" class="headerlink" title="自带服务"></a>自带服务</h2><p>angular自带30多种服务</p>
+<h2 id="自定义服务的方法"><a href="#自定义服务的方法" class="headerlink" title="自定义服务的方法"></a>自定义服务的方法</h2><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h3><p>通过service()创建服务</p>
+<h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h3><p>通过factory()创建服务，factory是创建服务的最常规方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> app =angular.module(<span class="string">'APPModule'</span>, []);  </div><div class="line">app.factory(<span class="string">'UserService'</span>, [  </div><div class="line">  <span class="string">'$http'</span>,  </div><div class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">$http</span>) </span>&#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line"></div><div class="line">  &#125;;</div><div class="line">]);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="方法3"><a href="#方法3" class="headerlink" title="方法3"></a>方法3</h3><p>通过provider()创建服务<br>使用provider() 创建时，返回的对象中必须有 $get() 函数对象，否则会创建失败</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">app.provider(<span class="string">'UserService'</span>, &#123;  </div><div class="line">  <span class="attr">self</span>: <span class="keyword">this</span>,  </div><div class="line">  <span class="attr">setName</span>:<span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;  </div><div class="line">    self.name = name;  </div><div class="line">  &#125;,  </div><div class="line">  <span class="attr">$get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">    <span class="keyword">return</span> &#123;  </div><div class="line">      <span class="attr">getName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">        <span class="keyword">return</span> self.name;  </div><div class="line">      &#125;  </div><div class="line">    &#125;;  </div><div class="line">  &#125;  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="方法4"><a href="#方法4" class="headerlink" title="方法4"></a>方法4</h3><p>通过constant()创建服务</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">app.constant(<span class="string">'ASToken'</span>, <span class="string">'12345'</span>);</div><div class="line"></div><div class="line">将 constant 注入后就可以直接使用了。</div><div class="line"></div><div class="line">app.controller(<span class="string">'MainController'</span>, [  </div><div class="line">  <span class="string">'$scope'</span>,  </div><div class="line"> <span class="string">'ASToken'</span>, <span class="comment">//注入constant  </span></div><div class="line"> <span class="function"><span class="keyword">function</span>(<span class="params">$scope, ASToken</span>) </span>&#123;  </div><div class="line">   <span class="comment">//Some Actions  </span></div><div class="line"> &#125;  </div><div class="line">]);</div></pre></td></tr></table></figure>
+<h3 id="方法5"><a href="#方法5" class="headerlink" title="方法5"></a>方法5</h3><p>通过value()创建服务<br>与 constant()用法相同。与 constant() 的区别是，constant() 可以注入到 config 中，而 value() 不行<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">app.constant(<span class="string">'ASToken'</span>, <span class="string">'12345'</span>).config(<span class="function"><span class="keyword">function</span>(<span class="params">ASToken</span>) </span>&#123;  </div><div class="line">  <span class="comment">//正常使用  </span></div><div class="line">&#125;);  </div><div class="line">app.constant(‘ASValue’, <span class="string">'12345'</span>).config(<span class="function"><span class="keyword">function</span>(<span class="params">ASValue</span>) </span>&#123;  </div><div class="line">  <span class="comment">//ASValue在config中无法访问  </span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">factory 把 service 的方法和数据放在一个对象里，并返回这个对象；</div><div class="line">service 通过构造函数方式创建 service，返回一个实例化对象；</div><div class="line">provider 创建一个可通过 config 配置的 service。</div><div class="line"></div><div class="line">factory和service，provider都用于注册服务，</div><div class="line">不同的是provider只能配置阶段注入，</div><div class="line">factory和service只能运行阶段注入；</div><div class="line">provider通过$get工厂函数穿件新对象,</div><div class="line">factory通过工厂函数创建新对象，</div><div class="line">service通过构造函数创建新对象.</div></pre></td></tr></table></figure>
+<h1 id="config方法"><a href="#config方法" class="headerlink" title=".config方法"></a>.config方法</h1><blockquote>
+<p>AngularJS模块可以在被加载和执行之前对其自身进行配置。我们可以在应用的加载阶段应用不同的逻辑组。<br>config就是执行前的配置</p>
+</blockquote>
+<h1 id="自定义Directive"><a href="#自定义Directive" class="headerlink" title="自定义Directive"></a>自定义Directive</h1><hr>
+<h1 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">1. ng-if跟ng-show/hide的区别有哪些？</div><div class="line"></div><div class="line">第一点区别是，ng-if 在后面表达式为 true 的时候才创建这个 dom 节点，ng-show 是初始时就创建了，用 display:block 和 display:none 来控制显示和不显示。</div><div class="line"></div><div class="line">第二点区别是，ng-if 会（隐式地）产生新作用域，ng-switch 、 ng-include 等会动态创建一块界面的也是如此。</div><div class="line"></div><div class="line">2. ng-repeat迭代数组的时候，如果数组中有相同值，会有什么问题，如何解决？</div><div class="line"></div><div class="line">会提示 Duplicates in a repeater are not allowed. 加 track by $index 可解决。当然，也可以 trace by 任何一个普通的值，只要能唯一性标识数组中的每一项即可（建立 dom 和数据之间的关联）。</div><div class="line"></div><div class="line">3. ng-click中写的表达式，能使用JS原生对象上的方法，比如Math.max之类的吗？为什么？</div><div class="line"></div><div class="line">不可以。只要是在页面中，就不能直接调用原生的 JS 方法，因为这些并不存在于与页面对应的 Controller 的 $scope 中。除非在 $scope 中添加了这个函数：</div><div class="line"></div><div class="line">$scope.parseInt = function(x)&#123;</div><div class="line">    return parseInt(x);</div><div class="line">&#125;</div><div class="line"></div><div class="line">4. &#123;&#123;now | &apos;yyyy-MM-dd&apos;&#125;&#125;这种表达式里面，竖线和后面的参数通过什么方式可以自定义？</div><div class="line"></div><div class="line">定义方式：</div><div class="line"></div><div class="line">app.filter(&apos;过滤器名称&apos;,function()&#123;</div><div class="line">    return function(需要过滤的对象, 过滤器参数1, 过滤器参数2, ...)&#123;</div><div class="line">        //...做一些事情   </div><div class="line">        return 处理后的对象;</div><div class="line">    &#125;</div><div class="line">&#125;); </div><div class="line"></div><div class="line">使用方式有两种，一种是直接在页面里：</div><div class="line"></div><div class="line">&lt;p&gt;&#123;&#123;now | date : &apos;yyyy-MM-dd&apos;&#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">一种是在 js 里面用：</div><div class="line"></div><div class="line">// $filter(&apos;过滤器名称&apos;)(需要过滤的对象, 参数1, 参数2,...)</div><div class="line">$filter(&apos;date&apos;)(now, &apos;yyyy-MM-dd hh:mm:ss&apos;);</div><div class="line"></div><div class="line">5. factory和service，provider是什么关系？</div><div class="line"></div><div class="line">factory 把 service 的方法和数据放在一个对象里，并返回这个对象；service 通过构造函数方式创建 service，返回一个实例化对象；provider 创建一个可通过 config 配置的 service。</div><div class="line"></div><div class="line">从底层实现上来看，service 调用了 factory，返回其实例；factory 调用了 provider，将其定义的内容放在 $get 中返回。factory 和 service 功能类似，只不过 factory 是普通 function，可以返回任何东西（return 的都可以被访问，所以那些私有变量怎么写你懂的）；service 是构造器，可以不返回（绑定到 this 的都可以被访问）；provider 是加强版 factory，返回一个可配置的 factory。</div><div class="line"></div><div class="line">大问题：</div><div class="line"></div><div class="line">1. angular的数据绑定采用什么机制？详述原理</div><div class="line"></div><div class="line">脏检查机制。</div><div class="line"></div><div class="line">Angular 在 scope 模型上设置了一个监听队列，用来监听数据变化并更新 view 。每次绑定一个东西到 view 上时 AngularJS 就会往 $watch 队列里插入一条 $watch，用来检测它监视的 model 里是否有变化的东西。当浏览器接收到可以被 angular context 处理的事件时，$digest 循环就会触发，遍历所有的 $watch，最后更新 dom。</div><div class="line"></div><div class="line">举个栗子：</div><div class="line"></div><div class="line">&lt;button ng-click=&quot;val=val+1&quot;&gt;increase 1&lt;/button&gt;</div><div class="line"></div><div class="line">click 时会产生一次更新的操作（至少触发两次 $digest 循环）</div><div class="line">按下按钮</div><div class="line">浏览器接收到一个事件，进入到 angular context</div><div class="line">$digest 循环开始执行，查询每个 $watch 是否变化</div><div class="line">由于监视 $scope.val 的 $watch 报告了变化，因此强制再执行一次 $digest 循环</div><div class="line">新的 $digest 循环未检测到变化</div><div class="line">浏览器拿回控制器，更新 $scope.val 新值对应的 dom</div><div class="line"></div><div class="line">$digest 循环的上限是 10 次（超过 10次后抛出一个异常，防止无限循环）。</div><div class="line"></div><div class="line">2. 两个平级界面块a和b，如果a中触发一个事件，有哪些方式能让b知道，详述原理</div><div class="line"></div><div class="line">这个问题换一种说法就是，如何在平级界面模块间进行通信。有两种方法，一种是共用服务，一种是基于事件。</div><div class="line"></div><div class="line">a. 共用服务</div><div class="line"></div><div class="line">在 Angular 中，通过 factory 可以生成一个单例对象，在需要通信的模块 a 和 b 中注入这个对象即可。</div><div class="line"></div><div class="line">b. 基于事件</div><div class="line"></div><div class="line">这个又分两种方式</div><div class="line"></div><div class="line">第一种是借助父 controller。在子 controller 中向父 controller 触发（$emit）一个事件，然后在父 controller 中监听（$on）事件，再广播（$broadcast）给子 controller ，这样通过事件携带的参数，实现了数据经过父 controller，在同级 controller 之间传播。</div><div class="line"></div><div class="line">第二种是借助 $rootScope。每个 Angular 应用默认有一个根作用域 $rootScope， 根作用域位于最顶层，从它往下挂着各级作用域。所以，如果子控制器直接使用 $rootScope 广播和接收事件，那么就可实现同级之间的通信。</div><div class="line"></div><div class="line">3. 一个angular应用应当如何良好地分层？</div><div class="line"></div><div class="line">分两个方面讲</div><div class="line"></div><div class="line">a. 目录结构的划分</div><div class="line"></div><div class="line">对于小型项目，可以按照文件类型组织，比如</div><div class="line"></div><div class="line">css</div><div class="line">js</div><div class="line">  controllers</div><div class="line">  models</div><div class="line">  services</div><div class="line">  filters</div><div class="line">templates  </div><div class="line"></div><div class="line">但是对于规模较大的项目，最好按业务模块划分，比如</div><div class="line"></div><div class="line">css</div><div class="line">modules</div><div class="line">  account</div><div class="line">    controllers</div><div class="line">    models</div><div class="line">    services</div><div class="line">    filters</div><div class="line">    templates</div><div class="line">  disk</div><div class="line">    controllers</div><div class="line">    models</div><div class="line">    services</div><div class="line">    filters</div><div class="line">    templates</div><div class="line"></div><div class="line">modules 下最好再有一个 common 目录来存放公共的东西。</div><div class="line"></div><div class="line">b. 逻辑代码的划分</div><div class="line"></div><div class="line">作为一个 MVVM 框架，Angular 应用本身就应该按照 模型，视图模型（控制器），视图来划分。</div><div class="line"></div><div class="line">这里逻辑代码的拆分，主要是指尽量让 controller 这一层很薄。提取共用的逻辑到 service 中 （比如后台数据的请求，数据的共享和缓存，基于事件的模块间通信等），提取共用的界面操作到 directive 中（比如将日期选择、分页等封装成组件等），提取共用的格式化操作到 filter 中等等。</div><div class="line"></div><div class="line">在复杂的应用中，也可以为实体建立对应的构造函数，比如硬盘（Disk）模块，可能有列表、新建、详情这样几个视图，并分别对应的有 controller，那么可以建一个 Disk 构造函数，里面完成数据的增删改查和验证操作，有跟 Disk 相关的 controller，就注入 Disk 构造器并生成一个实例，这个实例就具备了增删改查和验证方法。这样既层次分明，又实现了复用（让 controller 层更薄了）。</div><div class="line"></div><div class="line">4. angular应用常用哪些路由库，各自的区别是什么？</div><div class="line"></div><div class="line">Angular1.x 中常用 ngRoute 和 ui.router，还有一种为 Angular2 设计的 new router（面向组件）。后面那个没在实际项目中用过，就不讲了。</div><div class="line"></div><div class="line">无论是 ngRoute 还是 ui.router，作为框架额外的附加功能，都必须以 模块依赖 的形式被引入。</div><div class="line"></div><div class="line">两者区别是：</div><div class="line"></div><div class="line">ngRoute 模块是 Angular 自带的路由模块，而 ui.router 模块是基于 ngRoute模块开发的第三方模块。</div><div class="line"></div><div class="line">ui.router 是基于 state （状态）的， ngRoute 是基于 url 的，ui.router模块具有更强大的功能，主要体现在视图的嵌套方面。</div><div class="line"></div><div class="line">使用 ui.router 能够定义有明确父子关系的路由，并通过 ui-view 指令将子路由模版插入到父路由模板的 &lt;div ui-view&gt;&lt;/div&gt; 中去，从而实现视图嵌套。而在 ngRoute 中不能这样定义，如果同时在父子视图中 使用了 &lt;div ng-view&gt;&lt;/div&gt; 会陷入死循环。</div><div class="line"></div><div class="line">5. 如果通过angular的directive规划一套全组件化体系，可能遇到哪些挑战？</div><div class="line"></div><div class="line">没有自己用 directive 做过一全套组件，讲不出。</div><div class="line"></div><div class="line">能想到的一点是，组件如何与外界进行数据的交互，以及如何通过简单的配置就能使用吧。</div><div class="line"></div><div class="line">6. 分属不同团队进行开发的angular应用，如果要做整合，可能会遇到哪些问题，如何解决？</div><div class="line"></div><div class="line">可能会遇到不同模块之间的冲突。比如一个团队所有的开发在 moduleA 下进行，另一团队开发的代码在 moduleB 下：</div><div class="line"></div><div class="line">angular.module(&apos;myApp.moduleA&apos;, [])</div><div class="line">    .factory(&apos;serviceA&apos;, function()&#123;</div><div class="line">        ...</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">angular.module(&apos;myApp.moduleB&apos;, [])</div><div class="line">    .factory(&apos;serviceA&apos;, function()&#123;</div><div class="line">        ...</div><div class="line">    &#125;)    </div><div class="line"></div><div class="line">angular.module(&apos;myApp&apos;, [&apos;myApp.moduleA&apos;, &apos;myApp.moduleB&apos;]) </div><div class="line"></div><div class="line">会导致两个 module 下面的 serviceA 发生了覆盖。</div><div class="line"></div><div class="line">貌似在 Angular1.x 中并没有很好的解决办法，所以最好在前期进行统一规划，做好约定，严格按照约定开发，每个开发人员只写特定区块代码。</div><div class="line"></div><div class="line">7. angular的缺点有哪些？</div><div class="line"></div><div class="line">a. 强约束</div><div class="line"></div><div class="line">导致学习成本较高，对前端不友好。</div><div class="line"></div><div class="line">但遵守 AngularJS 的约定时，生产力会很高，对 Java 程序员友好。</div><div class="line"></div><div class="line">b. 不利于 SEO</div><div class="line"></div><div class="line">因为所有内容都是动态获取并渲染生成的，搜索引擎没法爬取。</div><div class="line"></div><div class="line">一种解决办法是，对于正常用户的访问，服务器响应 AngularJS 应用的内容；对于搜索引擎的访问，则响应专门针对 SEO 的HTML页面。</div><div class="line"></div><div class="line">c. 性能问题</div><div class="line"></div><div class="line">作为 MVVM 框架，因为实现了数据的双向绑定，对于大数组、复杂对象会存在性能问题。</div><div class="line"></div><div class="line">可以用来 优化 Angular 应用的性能 的办法：</div><div class="line"></div><div class="line">减少监控项（比如对不会变化的数据采用单向绑定）</div><div class="line">主动设置索引（指定 track by，简单类型默认用自身当索引，对象默认使用 $$hashKey，比如改为track by item.id）</div><div class="line">降低渲染数据量（比如分页，或者每次取一小部分数据，根据需要再取）</div><div class="line">数据扁平化（比如对于树状结构，使用扁平化结构，构建一个 map 和树状数据，对树操作时，由于跟扁平数据同一引用，树状数据变更会同步到原始的扁平数据）</div><div class="line"></div><div class="line">d. 移动端</div><div class="line"></div><div class="line">8. 如何看待angular 1.2中引入的controller as 语法？</div><div class="line"></div><div class="line">在 angular 1.2 以前，在 view 上的任何绑定都是直接绑定在 $scope 上的。使用 controllerAs，不需要再注入 $scope，controller 变成了一个很简单的 javascript 对象（POJO），一个更纯粹的 ViewModel。</div><div class="line"></div><div class="line">从源码实现上来看，controllerAs 语法只是把 controller 这个对象的实例用 as 别名在 $scope 上创建了一个属性。</div><div class="line"></div><div class="line">if (directive.controllerAs) &#123;</div><div class="line">    locals.$scope[directive.controllerAs] = controllerInstance;</div><div class="line">&#125;</div><div class="line"></div><div class="line">但是这样做，除了上面提到的使 controller 更加 POJO 外，还可以避免遇到 AngularJS 作用域相关的一个坑（就是上文中 ng-if 产生一级作用域的坑，其实也是 javascript 原型链继承中值类型继承的坑。因为使用 controllerAs 的话 view 上所有字段都绑定在一个引用的属性上，比如 vm.xx，所以坑不再存在）。</div><div class="line"></div><div class="line">不过不引入 $scope 会出现的一个问题是，导致 $emit、 $broadcast、 $on、$watch 等 $scope 下的方法无法使用。这些跟事件相关的操作可以封装起来统一处理，或者在单个 controller 中引入 $scope，特殊对待。</div><div class="line"></div><div class="line">9. 详述angular的“依赖注入”</div><div class="line"></div><div class="line">AngularJS 是通过构造函数的参数名字来推断依赖服务名称的，通过 toString() 来找到这个定义的 function 对应的字符串，然后用正则解析出其中的参数（依赖项），再去依赖映射中取到对应的依赖，实例化之后传入。</div><div class="line"></div><div class="line">因为 AngularJS 的 injector 是假设函数的参数名就是依赖的名字，然后去查找依赖项，那如果像下面这样简单注入依赖，代码压缩后（参数被重命名了），就无法查找到依赖项了。</div><div class="line"></div><div class="line">function myCtrl = ($scope, $http)&#123;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line"></div><div class="line">所以，通常会使用下面两种方式注入依赖（对依赖添加的顺序有要求）。</div><div class="line"></div><div class="line">数组注释法：</div><div class="line"></div><div class="line">myApp.controller(&apos;myCtrl&apos;, [&apos;$scope&apos;, &apos;$http&apos;, function($scope, $http)&#123;</div><div class="line">    ...</div><div class="line">&#125;])</div><div class="line"></div><div class="line">显式 $inject ：</div><div class="line"></div><div class="line">myApp.controller(&apos;myCtrl&apos;, myCtrl);</div><div class="line">function myCtrl = ($scope, $http)&#123;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line">myCtrl.$inject = [&apos;$scope&apos;, &apos;$http&apos;];</div><div class="line"></div><div class="line">对于一个 DI 容器，必须具备三个要素：依赖项的注册，依赖关系的声明和对象的获取。在 AngularJS 中，module 和 $provide 都可以提供依赖项的注册；内置的 injector 可以获取对象（自动完成依赖注入）；依赖关系的声明，就是上面的那两种方式。</div><div class="line"></div><div class="line">10. 如何看待angular 2……</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;(1) angularjs是一个js的框架，使用js编写，可以通过”script”标签添加到html页面&lt;br&gt;(2) angularjs通
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="angularjs" scheme="http://yoursite.com/tags/angularjs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css样式表</title>
+    <link href="http://yoursite.com/2016/12/22/css%E6%A0%B7%E5%BC%8F%E8%A1%A8/"/>
+    <id>http://yoursite.com/2016/12/22/css样式表/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:46:24.384Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="id和class选择器"><a href="#id和class选择器" class="headerlink" title="id和class选择器"></a>id和class选择器</h1><blockquote>
+<p>id使用”#”来定义，如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#abc</span> &#123;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>class使用”.”来定义，如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.abc</span> &#123;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">color</span>: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>另外还可以指定元素来使用class，如下<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span><span class="selector-class">.abc</span> &#123;</div><div class="line">    <span class="attribute">color</span>: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="样式分为：内部，外部，内联，多重"><a href="#样式分为：内部，外部，内联，多重" class="headerlink" title="样式分为：内部，外部，内联，多重"></a>样式分为：内部，外部，内联，多重</h1><h2 id="外部样式表-常用-："><a href="#外部样式表-常用-：" class="headerlink" title="外部样式表(常用) ："></a><strong>外部样式表(常用)</strong> ：</h2><p>举例:<br>mycss.css中：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">hr</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">20px</span>;    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/img/abc.jpg"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>myhtml.html中引用：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"/css/mycss.css"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="内部样式表-："><a href="#内部样式表-：" class="headerlink" title="内部样式表 ："></a><strong>内部样式表</strong> ：</h2><p>举例:<br>html中：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-tag">hr</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">20px</span>;    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/img/abc.jpg"</span>);</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="内联样式表-："><a href="#内联样式表-：" class="headerlink" title="内联样式表 ："></a><strong>内联样式表</strong> ：</h2><p>举例:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color=red;margin-left:20px"</span>&gt;</span>这是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="多重样式表-："><a href="#多重样式表-：" class="headerlink" title="多重样式表 ："></a><strong>多重样式表</strong> ：</h2><p><strong>含义</strong>：指的是相同的元素被不同的样式表所定义。<br><strong>注意的问题</strong>：使用样式表的优先级</p>
+<p><strong>优先级</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">低| 浏览器缺省设置</div><div class="line">中| 外部样式表</div><div class="line">中| 内部样式表（位于 &lt;head&gt; 标签内部）</div><div class="line">高| 内联样式（在 HTML 元素内部）</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;id和class选择器&quot;&gt;&lt;a href=&quot;#id和class选择器&quot; class=&quot;headerlink&quot; title=&quot;id和class选择器&quot;&gt;&lt;/a&gt;id和class选择器&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;id使用”#”来定义，如下：&lt;br&gt;&lt;fi
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css背景</title>
+    <link href="http://yoursite.com/2016/12/22/css%E8%83%8C%E6%99%AF/"/>
+    <id>http://yoursite.com/2016/12/22/css背景/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:46:25.624Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CSS背景"><a href="#CSS背景" class="headerlink" title="CSS背景"></a>CSS背景</h1><blockquote>
+<p>background-color<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#00ffaa</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>background-image<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/img/abc.jpg"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>background-repeat（平铺）</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-repeat</span>: no-repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>background-attachment(背景是否随着页面其它部分滚动而滚动,默认scroll滚动,fixed固定，inherit继承父元素)<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-attachment</span>: fixed; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>background-position（设定背景的起始位置默认0% 0%）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-position</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>背景属性可以简写，如下：</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#ffffff</span> <span class="built_in">url</span>(<span class="string">"img/abc.jpg"</span>) no-repeat fixed center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CSS背景&quot;&gt;&lt;a href=&quot;#CSS背景&quot; class=&quot;headerlink&quot; title=&quot;CSS背景&quot;&gt;&lt;/a&gt;CSS背景&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;background-color&lt;br&gt;&lt;figure class=&quot;highlight 
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>css字体</title>
@@ -34,6 +212,61 @@
     <summary type="html">
     
       &lt;h1 id=&quot;字体系列&quot;&gt;&lt;a href=&quot;#字体系列&quot; class=&quot;headerlink&quot; title=&quot;字体系列&quot;&gt;&lt;/a&gt;字体系列&lt;/h1&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css边框</title>
+    <link href="http://yoursite.com/2016/12/22/css%E8%BE%B9%E6%A1%86/"/>
+    <id>http://yoursite.com/2016/12/22/css边框/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:46:27.536Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="边框可以自定义-样式-宽度-颜色-各边设置样式"><a href="#边框可以自定义-样式-宽度-颜色-各边设置样式" class="headerlink" title="边框可以自定义   样式,宽度,颜色,各边设置样式"></a>边框可以自定义   样式,宽度,颜色,各边设置样式</h1><h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">none</span>;     无边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">dotted</span>;   虚线边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">dashed</span>;   粗虚线边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">solid</span>;    实线边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">double</span>;   双边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">groove</span>;   凹槽边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">ridge</span>;    垄状边框     </div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">inset</span>；   嵌入边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">hidden</span>    隐藏边框</div></pre></td></tr></table></figure>
+<h2 id="宽度"><a href="#宽度" class="headerlink" title="宽度"></a>宽度</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-width</span><span class="selector-pseudo">:5px</span></div></pre></td></tr></table></figure>
+<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-color</span>: <span class="selector-tag">red</span>;</div></pre></td></tr></table></figure>
+<h2 id="各边设置"><a href="#各边设置" class="headerlink" title="各边设置"></a>各边设置</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-top-style</span>: <span class="selector-tag">none</span>;     上</div><div class="line"><span class="selector-tag">border-bottom-style</span>: <span class="selector-tag">none</span>;  下</div><div class="line"><span class="selector-tag">border-left-style</span>: <span class="selector-tag">solid</span>;   左</div><div class="line"><span class="selector-tag">border-right</span>: <span class="selector-tag">dotted</span>;       右</div></pre></td></tr></table></figure>
+<h2 id="边框也可以简写"><a href="#边框也可以简写" class="headerlink" title="边框也可以简写"></a>边框也可以简写</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border</span>： 5<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">red</span>;</div><div class="line"></div><div class="line">可以简写一次性设置四个边</div><div class="line"><span class="selector-tag">border-color</span>: <span class="selector-tag">red</span> <span class="selector-tag">yellow</span> <span class="selector-tag">blue</span> <span class="selector-tag">black</span>;</div><div class="line"><span class="selector-tag">border-width</span>: 2<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 9<span class="selector-tag">px</span> 10<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-style</span><span class="selector-pseudo">:solid</span> <span class="selector-tag">dotted</span> <span class="selector-tag">none</span> <span class="selector-tag">dotted</span>;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;边框可以自定义-样式-宽度-颜色-各边设置样式&quot;&gt;&lt;a href=&quot;#边框可以自定义-样式-宽度-颜色-各边设置样式&quot; class=&quot;headerlink&quot; title=&quot;边框可以自定义   样式,宽度,颜色,各边设置样式&quot;&gt;&lt;/a&gt;边框可以自定义   样式,宽度
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css外边距</title>
+    <link href="http://yoursite.com/2016/12/22/css%E5%A4%96%E8%BE%B9%E8%B7%9D/"/>
+    <id>http://yoursite.com/2016/12/22/css外边距/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:46:22.607Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="外边距的作用"><a href="#外边距的作用" class="headerlink" title="外边距的作用"></a>外边距的作用</h1><blockquote>
+<p>定义元素周围的空间</p>
+<h1 id="外边距的解释"><a href="#外边距的解释" class="headerlink" title="外边距的解释"></a>外边距的解释</h1><p>margin没有背景颜色，是完全透明的<br>margin可以随意的改变元素的上下左右边距<br>margin 可以使用负值，重叠的内容<br>单位可以是px % cm等</p>
+<h1 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h1></blockquote>
+<h2 id="调节上下左右边距的用法"><a href="#调节上下左右边距的用法" class="headerlink" title="调节上下左右边距的用法"></a>调节上下左右边距的用法</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">margin-top</span>: 100<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">margin-bottom</span>: 20<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">margin-left</span>: 10<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">margin0right</span>: 10<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure>
+<h2 id="当然margin也可以简写"><a href="#当然margin也可以简写" class="headerlink" title="当然margin也可以简写"></a>当然margin也可以简写</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">如果只有一个值，则表示： 上下左右的值</div><div class="line"><span class="selector-tag">margin</span>: 10<span class="selector-tag">px</span>;</div><div class="line"></div><div class="line">如果有两个值，则表示：上下，左右的值</div><div class="line"><span class="selector-tag">margin</span>: 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span>;</div><div class="line"></div><div class="line">如果有三个值，则表示：上，左右，下的值</div><div class="line"><span class="selector-tag">margin</span>: 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 30<span class="selector-tag">px</span>;</div><div class="line"></div><div class="line">如果有四个值，当然是:上,下,左,右啦</div><div class="line"><span class="selector-tag">margin</span>: 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> 40<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;外边距的作用&quot;&gt;&lt;a href=&quot;#外边距的作用&quot; class=&quot;headerlink&quot; title=&quot;外边距的作用&quot;&gt;&lt;/a&gt;外边距的作用&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;定义元素周围的空间&lt;/p&gt;
+&lt;h1 id=&quot;外边距的解释&quot;&gt;&lt;a href=&quot;#外
     
     </summary>
     
@@ -111,223 +344,6 @@
   </entry>
   
   <entry>
-    <title>css填充</title>
-    <link href="http://yoursite.com/2016/12/22/css%E5%A1%AB%E5%85%85/"/>
-    <id>http://yoursite.com/2016/12/22/css填充/</id>
-    <published>2016-12-22T06:29:50.000Z</published>
-    <updated>2016-12-22T06:46:21.916Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="什么是填充"><a href="#什么是填充" class="headerlink" title="什么是填充"></a>什么是填充</h1><blockquote>
-<p>填充（padding）定义元素内容和元素边框之间的区域</p>
-<h1 id="填充需要注意的"><a href="#填充需要注意的" class="headerlink" title="填充需要注意的"></a>填充需要注意的</h1><p>填充相当于内边距<br>填充的单位 px pt em 等等<br>如果没有指定填充边距的值，那么填充区域就被元素内容的背景色霸占啦。</p>
-<h1 id="填充的属性"><a href="#填充的属性" class="headerlink" title="填充的属性"></a>填充的属性</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">padding-top</span>: 20<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">padding-bottom</span>: 20<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">padding-left</span>: 20<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">padding-right</span>: 20<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure>
-</blockquote>
-<p>#填充简写(类似于外边距margin)<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">padding</span><span class="selector-pseudo">:20px</span> 30<span class="selector-tag">px</span> 40<span class="selector-tag">px</span> 50<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;什么是填充&quot;&gt;&lt;a href=&quot;#什么是填充&quot; class=&quot;headerlink&quot; title=&quot;什么是填充&quot;&gt;&lt;/a&gt;什么是填充&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;填充（padding）定义元素内容和元素边框之间的区域&lt;/p&gt;
-&lt;h1 id=&quot;填充需要注
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css外边距</title>
-    <link href="http://yoursite.com/2016/12/22/css%E5%A4%96%E8%BE%B9%E8%B7%9D/"/>
-    <id>http://yoursite.com/2016/12/22/css外边距/</id>
-    <published>2016-12-22T06:29:50.000Z</published>
-    <updated>2016-12-22T06:46:22.607Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="外边距的作用"><a href="#外边距的作用" class="headerlink" title="外边距的作用"></a>外边距的作用</h1><blockquote>
-<p>定义元素周围的空间</p>
-<h1 id="外边距的解释"><a href="#外边距的解释" class="headerlink" title="外边距的解释"></a>外边距的解释</h1><p>margin没有背景颜色，是完全透明的<br>margin可以随意的改变元素的上下左右边距<br>margin 可以使用负值，重叠的内容<br>单位可以是px % cm等</p>
-<h1 id="具体用法"><a href="#具体用法" class="headerlink" title="具体用法"></a>具体用法</h1></blockquote>
-<h2 id="调节上下左右边距的用法"><a href="#调节上下左右边距的用法" class="headerlink" title="调节上下左右边距的用法"></a>调节上下左右边距的用法</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">margin-top</span>: 100<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">margin-bottom</span>: 20<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">margin-left</span>: 10<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">margin0right</span>: 10<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure>
-<h2 id="当然margin也可以简写"><a href="#当然margin也可以简写" class="headerlink" title="当然margin也可以简写"></a>当然margin也可以简写</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">如果只有一个值，则表示： 上下左右的值</div><div class="line"><span class="selector-tag">margin</span>: 10<span class="selector-tag">px</span>;</div><div class="line"></div><div class="line">如果有两个值，则表示：上下，左右的值</div><div class="line"><span class="selector-tag">margin</span>: 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span>;</div><div class="line"></div><div class="line">如果有三个值，则表示：上，左右，下的值</div><div class="line"><span class="selector-tag">margin</span>: 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 30<span class="selector-tag">px</span>;</div><div class="line"></div><div class="line">如果有四个值，当然是:上,下,左,右啦</div><div class="line"><span class="selector-tag">margin</span>: 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> 40<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;外边距的作用&quot;&gt;&lt;a href=&quot;#外边距的作用&quot; class=&quot;headerlink&quot; title=&quot;外边距的作用&quot;&gt;&lt;/a&gt;外边距的作用&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;定义元素周围的空间&lt;/p&gt;
-&lt;h1 id=&quot;外边距的解释&quot;&gt;&lt;a href=&quot;#外
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css文本</title>
-    <link href="http://yoursite.com/2016/12/22/css%E6%96%87%E6%9C%AC/"/>
-    <id>http://yoursite.com/2016/12/22/css文本/</id>
-    <published>2016-12-22T06:29:50.000Z</published>
-    <updated>2016-12-22T06:46:23.801Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">color</span>: <span class="selector-id">#00ffaa</span>;</div></pre></td></tr></table></figure>
-<h1 id="文本对齐方式"><a href="#文本对齐方式" class="headerlink" title="文本对齐方式"></a>文本对齐方式</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1) <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;     居中</div><div class="line">(2) <span class="selector-tag">text-align</span>: <span class="selector-tag">left</span>;       左对齐</div><div class="line">(3) <span class="selector-tag">text-align</span>: <span class="selector-tag">justify</span>;    宽度相等，左右边距对齐</div></pre></td></tr></table></figure>
-<h1 id="文本修饰"><a href="#文本修饰" class="headerlink" title="文本修饰"></a>文本修饰</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1) <span class="selector-tag">text-decoration</span>: <span class="selector-tag">overline</span>;  字体上边上划线</div><div class="line">(2) <span class="selector-tag">text-decoration</span>：<span class="selector-tag">line-through</span>;  字体中间删除线</div><div class="line">(3) <span class="selector-tag">text-decoration</span>：<span class="selector-tag">underline</span>  字体下边下划线</div></pre></td></tr></table></figure>
-<h1 id="文本转换"><a href="#文本转换" class="headerlink" title="文本转换"></a>文本转换</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1)<span class="selector-tag">text-transform</span>: <span class="selector-tag">uppercase</span>;  全部转换为大写</div><div class="line">(2)<span class="selector-tag">text-transform</span>: <span class="selector-tag">lowercase</span>;  全部转换为小写</div><div class="line">(3)<span class="selector-tag">text-transform</span>: <span class="selector-tag">capitalize</span>; 全部转换为首字母大写</div></pre></td></tr></table></figure>
-<h1 id="文本缩进（指定的是文本第一行的缩进）"><a href="#文本缩进（指定的是文本第一行的缩进）" class="headerlink" title="文本缩进（指定的是文本第一行的缩进）"></a>文本缩进（指定的是文本第一行的缩进）</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">text-indent</span>: 50<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>还有更多的文本操作属性，在实际的代码书写过程中去熟悉。。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;文本颜色&quot;&gt;&lt;a href=&quot;#文本颜色&quot; class=&quot;headerlink&quot; title=&quot;文本颜色&quot;&gt;&lt;/a&gt;文本颜色&lt;/h1&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css样式表</title>
-    <link href="http://yoursite.com/2016/12/22/css%E6%A0%B7%E5%BC%8F%E8%A1%A8/"/>
-    <id>http://yoursite.com/2016/12/22/css样式表/</id>
-    <published>2016-12-22T06:29:50.000Z</published>
-    <updated>2016-12-22T06:46:24.384Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="id和class选择器"><a href="#id和class选择器" class="headerlink" title="id和class选择器"></a>id和class选择器</h1><blockquote>
-<p>id使用”#”来定义，如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#abc</span> &#123;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>class使用”.”来定义，如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.abc</span> &#123;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">color</span>: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>另外还可以指定元素来使用class，如下<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span><span class="selector-class">.abc</span> &#123;</div><div class="line">    <span class="attribute">color</span>: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h1 id="样式分为：内部，外部，内联，多重"><a href="#样式分为：内部，外部，内联，多重" class="headerlink" title="样式分为：内部，外部，内联，多重"></a>样式分为：内部，外部，内联，多重</h1><h2 id="外部样式表-常用-："><a href="#外部样式表-常用-：" class="headerlink" title="外部样式表(常用) ："></a><strong>外部样式表(常用)</strong> ：</h2><p>举例:<br>mycss.css中：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">hr</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">20px</span>;    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/img/abc.jpg"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>myhtml.html中引用：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"/css/mycss.css"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="内部样式表-："><a href="#内部样式表-：" class="headerlink" title="内部样式表 ："></a><strong>内部样式表</strong> ：</h2><p>举例:<br>html中：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-tag">hr</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">20px</span>;    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/img/abc.jpg"</span>);</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="内联样式表-："><a href="#内联样式表-：" class="headerlink" title="内联样式表 ："></a><strong>内联样式表</strong> ：</h2><p>举例:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color=red;margin-left:20px"</span>&gt;</span>这是一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h2 id="多重样式表-："><a href="#多重样式表-：" class="headerlink" title="多重样式表 ："></a><strong>多重样式表</strong> ：</h2><p><strong>含义</strong>：指的是相同的元素被不同的样式表所定义。<br><strong>注意的问题</strong>：使用样式表的优先级</p>
-<p><strong>优先级</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">低| 浏览器缺省设置</div><div class="line">中| 外部样式表</div><div class="line">中| 内部样式表（位于 &lt;head&gt; 标签内部）</div><div class="line">高| 内联样式（在 HTML 元素内部）</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;id和class选择器&quot;&gt;&lt;a href=&quot;#id和class选择器&quot; class=&quot;headerlink&quot; title=&quot;id和class选择器&quot;&gt;&lt;/a&gt;id和class选择器&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;id使用”#”来定义，如下：&lt;br&gt;&lt;fi
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css边框</title>
-    <link href="http://yoursite.com/2016/12/22/css%E8%BE%B9%E6%A1%86/"/>
-    <id>http://yoursite.com/2016/12/22/css边框/</id>
-    <published>2016-12-22T06:29:50.000Z</published>
-    <updated>2016-12-22T06:46:27.536Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="边框可以自定义-样式-宽度-颜色-各边设置样式"><a href="#边框可以自定义-样式-宽度-颜色-各边设置样式" class="headerlink" title="边框可以自定义   样式,宽度,颜色,各边设置样式"></a>边框可以自定义   样式,宽度,颜色,各边设置样式</h1><h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">none</span>;     无边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">dotted</span>;   虚线边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">dashed</span>;   粗虚线边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">solid</span>;    实线边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">double</span>;   双边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">groove</span>;   凹槽边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">ridge</span>;    垄状边框     </div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">inset</span>；   嵌入边框</div><div class="line"><span class="selector-tag">border-style</span>: <span class="selector-tag">hidden</span>    隐藏边框</div></pre></td></tr></table></figure>
-<h2 id="宽度"><a href="#宽度" class="headerlink" title="宽度"></a>宽度</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-width</span><span class="selector-pseudo">:5px</span></div></pre></td></tr></table></figure>
-<h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-color</span>: <span class="selector-tag">red</span>;</div></pre></td></tr></table></figure>
-<h2 id="各边设置"><a href="#各边设置" class="headerlink" title="各边设置"></a>各边设置</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border-top-style</span>: <span class="selector-tag">none</span>;     上</div><div class="line"><span class="selector-tag">border-bottom-style</span>: <span class="selector-tag">none</span>;  下</div><div class="line"><span class="selector-tag">border-left-style</span>: <span class="selector-tag">solid</span>;   左</div><div class="line"><span class="selector-tag">border-right</span>: <span class="selector-tag">dotted</span>;       右</div></pre></td></tr></table></figure>
-<h2 id="边框也可以简写"><a href="#边框也可以简写" class="headerlink" title="边框也可以简写"></a>边框也可以简写</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">border</span>： 5<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">red</span>;</div><div class="line"></div><div class="line">可以简写一次性设置四个边</div><div class="line"><span class="selector-tag">border-color</span>: <span class="selector-tag">red</span> <span class="selector-tag">yellow</span> <span class="selector-tag">blue</span> <span class="selector-tag">black</span>;</div><div class="line"><span class="selector-tag">border-width</span>: 2<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> 9<span class="selector-tag">px</span> 10<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border-style</span><span class="selector-pseudo">:solid</span> <span class="selector-tag">dotted</span> <span class="selector-tag">none</span> <span class="selector-tag">dotted</span>;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;边框可以自定义-样式-宽度-颜色-各边设置样式&quot;&gt;&lt;a href=&quot;#边框可以自定义-样式-宽度-颜色-各边设置样式&quot; class=&quot;headerlink&quot; title=&quot;边框可以自定义   样式,宽度,颜色,各边设置样式&quot;&gt;&lt;/a&gt;边框可以自定义   样式,宽度
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css背景</title>
-    <link href="http://yoursite.com/2016/12/22/css%E8%83%8C%E6%99%AF/"/>
-    <id>http://yoursite.com/2016/12/22/css背景/</id>
-    <published>2016-12-22T06:29:50.000Z</published>
-    <updated>2016-12-22T06:46:25.624Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="CSS背景"><a href="#CSS背景" class="headerlink" title="CSS背景"></a>CSS背景</h1><blockquote>
-<p>background-color<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#00ffaa</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>background-image<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/img/abc.jpg"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>background-repeat（平铺）</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-repeat</span>: no-repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>background-attachment(背景是否随着页面其它部分滚动而滚动,默认scroll滚动,fixed固定，inherit继承父元素)<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-attachment</span>: fixed; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>background-position（设定背景的起始位置默认0% 0%）<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background-position</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>背景属性可以简写，如下：</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#ffffff</span> <span class="built_in">url</span>(<span class="string">"img/abc.jpg"</span>) no-repeat fixed center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;CSS背景&quot;&gt;&lt;a href=&quot;#CSS背景&quot; class=&quot;headerlink&quot; title=&quot;CSS背景&quot;&gt;&lt;/a&gt;CSS背景&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;background-color&lt;br&gt;&lt;figure class=&quot;highlight 
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css分组和嵌套</title>
-    <link href="http://yoursite.com/2016/12/22/css%E5%88%86%E7%BB%84%E5%92%8C%E5%B5%8C%E5%A5%97/"/>
-    <id>http://yoursite.com/2016/12/22/css分组和嵌套/</id>
-    <published>2016-12-22T06:29:50.000Z</published>
-    <updated>2016-12-22T06:41:45.131Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><blockquote>
-<p>减少代码的书写</p>
-<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>逗号隔开，如下<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span>,<span class="selector-tag">h1</span>,<span class="selector-tag">h2</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h1 id="嵌套的选择器"><a href="#嵌套的选择器" class="headerlink" title="嵌套的选择器"></a>嵌套的选择器</h1><blockquote>
-<p>如果有很多的p段落，但其中一部分是有class=”abc”,则可以这么写：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.abc</span> <span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">color</span>: green;</div><div class="line">&#125;</div><div class="line"></div><div class="line">这样就可以只改变<span class="selector-tag">class</span>为<span class="selector-tag">abc</span>，标签为<span class="selector-tag">p</span>的元素了。</div><div class="line">注意这里是空格隔开哦。</div></pre></td></tr></table></figure></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;作用&quot;&gt;&lt;a href=&quot;#作用&quot; class=&quot;headerlink&quot; title=&quot;作用&quot;&gt;&lt;/a&gt;作用&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;减少代码的书写&lt;/p&gt;
-&lt;h1 id=&quot;使用方法&quot;&gt;&lt;a href=&quot;#使用方法&quot; class=&quot;headerli
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
     <title>css表格</title>
     <link href="http://yoursite.com/2016/12/22/css%E8%A1%A8%E6%A0%BC/"/>
     <id>http://yoursite.com/2016/12/22/css表格/</id>
@@ -386,6 +402,37 @@
   </entry>
   
   <entry>
+    <title>css分组和嵌套</title>
+    <link href="http://yoursite.com/2016/12/22/css%E5%88%86%E7%BB%84%E5%92%8C%E5%B5%8C%E5%A5%97/"/>
+    <id>http://yoursite.com/2016/12/22/css分组和嵌套/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:41:45.131Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><blockquote>
+<p>减少代码的书写</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>逗号隔开，如下<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span>,<span class="selector-tag">h1</span>,<span class="selector-tag">h2</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="嵌套的选择器"><a href="#嵌套的选择器" class="headerlink" title="嵌套的选择器"></a>嵌套的选择器</h1><blockquote>
+<p>如果有很多的p段落，但其中一部分是有class=”abc”,则可以这么写：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.abc</span> <span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">color</span>: green;</div><div class="line">&#125;</div><div class="line"></div><div class="line">这样就可以只改变<span class="selector-tag">class</span>为<span class="selector-tag">abc</span>，标签为<span class="selector-tag">p</span>的元素了。</div><div class="line">注意这里是空格隔开哦。</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;作用&quot;&gt;&lt;a href=&quot;#作用&quot; class=&quot;headerlink&quot; title=&quot;作用&quot;&gt;&lt;/a&gt;作用&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;减少代码的书写&lt;/p&gt;
+&lt;h1 id=&quot;使用方法&quot;&gt;&lt;a href=&quot;#使用方法&quot; class=&quot;headerli
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
     <title>css链接</title>
     <link href="http://yoursite.com/2016/12/22/css%E9%93%BE%E6%8E%A5/"/>
     <id>http://yoursite.com/2016/12/22/css链接/</id>
@@ -400,6 +447,66 @@
     <summary type="html">
     
       &lt;h1 id=&quot;链接状态（注意这里a后边使用”-”号）&quot;&gt;&lt;a href=&quot;#链接状态（注意这里a后边使用”-”号）&quot; class=&quot;headerlink&quot; title=&quot;链接状态（注意这里a后边使用”:”号）&quot;&gt;&lt;/a&gt;链接状态（注意这里a后边使用”:”号）&lt;/h1&gt;&lt;figu
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css文本</title>
+    <link href="http://yoursite.com/2016/12/22/css%E6%96%87%E6%9C%AC/"/>
+    <id>http://yoursite.com/2016/12/22/css文本/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:46:23.801Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="文本颜色"><a href="#文本颜色" class="headerlink" title="文本颜色"></a>文本颜色</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">color</span>: <span class="selector-id">#00ffaa</span>;</div></pre></td></tr></table></figure>
+<h1 id="文本对齐方式"><a href="#文本对齐方式" class="headerlink" title="文本对齐方式"></a>文本对齐方式</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1) <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;     居中</div><div class="line">(2) <span class="selector-tag">text-align</span>: <span class="selector-tag">left</span>;       左对齐</div><div class="line">(3) <span class="selector-tag">text-align</span>: <span class="selector-tag">justify</span>;    宽度相等，左右边距对齐</div></pre></td></tr></table></figure>
+<h1 id="文本修饰"><a href="#文本修饰" class="headerlink" title="文本修饰"></a>文本修饰</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1) <span class="selector-tag">text-decoration</span>: <span class="selector-tag">overline</span>;  字体上边上划线</div><div class="line">(2) <span class="selector-tag">text-decoration</span>：<span class="selector-tag">line-through</span>;  字体中间删除线</div><div class="line">(3) <span class="selector-tag">text-decoration</span>：<span class="selector-tag">underline</span>  字体下边下划线</div></pre></td></tr></table></figure>
+<h1 id="文本转换"><a href="#文本转换" class="headerlink" title="文本转换"></a>文本转换</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(1)<span class="selector-tag">text-transform</span>: <span class="selector-tag">uppercase</span>;  全部转换为大写</div><div class="line">(2)<span class="selector-tag">text-transform</span>: <span class="selector-tag">lowercase</span>;  全部转换为小写</div><div class="line">(3)<span class="selector-tag">text-transform</span>: <span class="selector-tag">capitalize</span>; 全部转换为首字母大写</div></pre></td></tr></table></figure>
+<h1 id="文本缩进（指定的是文本第一行的缩进）"><a href="#文本缩进（指定的是文本第一行的缩进）" class="headerlink" title="文本缩进（指定的是文本第一行的缩进）"></a>文本缩进（指定的是文本第一行的缩进）</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">text-indent</span>: 50<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>还有更多的文本操作属性，在实际的代码书写过程中去熟悉。。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;文本颜色&quot;&gt;&lt;a href=&quot;#文本颜色&quot; class=&quot;headerlink&quot; title=&quot;文本颜色&quot;&gt;&lt;/a&gt;文本颜色&lt;/h1&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css填充</title>
+    <link href="http://yoursite.com/2016/12/22/css%E5%A1%AB%E5%85%85/"/>
+    <id>http://yoursite.com/2016/12/22/css填充/</id>
+    <published>2016-12-22T06:29:50.000Z</published>
+    <updated>2016-12-22T06:46:21.916Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是填充"><a href="#什么是填充" class="headerlink" title="什么是填充"></a>什么是填充</h1><blockquote>
+<p>填充（padding）定义元素内容和元素边框之间的区域</p>
+<h1 id="填充需要注意的"><a href="#填充需要注意的" class="headerlink" title="填充需要注意的"></a>填充需要注意的</h1><p>填充相当于内边距<br>填充的单位 px pt em 等等<br>如果没有指定填充边距的值，那么填充区域就被元素内容的背景色霸占啦。</p>
+<h1 id="填充的属性"><a href="#填充的属性" class="headerlink" title="填充的属性"></a>填充的属性</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">padding-top</span>: 20<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">padding-bottom</span>: 20<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">padding-left</span>: 20<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">padding-right</span>: 20<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>#填充简写(类似于外边距margin)<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">padding</span><span class="selector-pseudo">:20px</span> 30<span class="selector-tag">px</span> 40<span class="selector-tag">px</span> 50<span class="selector-tag">px</span>;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是填充&quot;&gt;&lt;a href=&quot;#什么是填充&quot; class=&quot;headerlink&quot; title=&quot;什么是填充&quot;&gt;&lt;/a&gt;什么是填充&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;填充（padding）定义元素内容和元素边框之间的区域&lt;/p&gt;
+&lt;h1 id=&quot;填充需要注
     
     </summary>
     
@@ -666,59 +773,6 @@
       <category term="协议" scheme="http://yoursite.com/tags/%E5%8D%8F%E8%AE%AE/"/>
     
       <category term="udp" scheme="http://yoursite.com/tags/udp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo第一篇文章</title>
-    <link href="http://yoursite.com/2016/12/13/hello-world/"/>
-    <id>http://yoursite.com/2016/12/13/hello-world/</id>
-    <published>2016-12-13T08:42:56.685Z</published>
-    <updated>2016-12-14T00:48:26.446Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="新建一个文章"><a href="#新建一个文章" class="headerlink" title="新建一个文章"></a>新建一个文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"blog name"</span></div></pre></td></tr></table></figure>
-<h3 id="开启服务端（可以进行本地测试）"><a href="#开启服务端（可以进行本地测试）" class="headerlink" title="开启服务端（可以进行本地测试）"></a>开启服务端（可以进行本地测试）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<h3 id="将文章md格式生成html格式"><a href="#将文章md格式生成html格式" class="headerlink" title="将文章md格式生成html格式"></a>将文章md格式生成html格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<h3 id="提交文章到github上"><a href="#提交文章到github上" class="headerlink" title="提交文章到github上"></a>提交文章到github上</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;新建一个文章&quot;&gt;&lt;a href=&quot;#新建一个文章&quot; class=&quot;headerlink&quot; title=&quot;新建一个文章&quot;&gt;&lt;/a&gt;新建一个文章&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>音乐</title>
-    <link href="http://yoursite.com/2016/12/13/tags/"/>
-    <id>http://yoursite.com/2016/12/13/tags/</id>
-    <published>2016-12-13T08:39:00.000Z</published>
-    <updated>2016-12-15T01:30:27.129Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>网易云音乐</p>
-<hr>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=29019227&auto=1&height=66"></iframe></blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;网易云音乐&lt;/p&gt;
-&lt;hr&gt;
-&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163
-    
-    </summary>
-    
-      <category term="music" scheme="http://yoursite.com/categories/music/"/>
-    
-    
-      <category term="music" scheme="http://yoursite.com/tags/music/"/>
     
   </entry>
   
