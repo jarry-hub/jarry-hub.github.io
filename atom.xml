@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-28T07:21:33.712Z</updated>
+  <updated>2017-08-18T01:21:18.618Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>初次见面</title>
+    <link href="http://yoursite.com/2017/08/18/%E2%80%9C%E5%88%9D%E6%AC%A1%E8%A7%81%E9%9D%A2/"/>
+    <id>http://yoursite.com/2017/08/18/“初次见面/</id>
+    <published>2017-08-18T01:03:58.000Z</published>
+    <updated>2017-08-18T01:21:18.618Z</updated>
+    
+    <content type="html"><![CDATA[<center><br><img src="/img/zhen/1.jpg" style="border:0"><br></center><br>光阴留痕<br><center><br><img src="/img/zhen/2.jpg" style="border:0"><br></center><br>唇齿余香<br><center><br><img src="/img/zhen/3.jpg" style="border:0"><br></center><br>你穿山涉水<br><center><br><img src="/img/zhen/4.jpg" style="border:0"><br></center><br>如约而至<br><center><br><img src="/img/zhen/7.jpg" style="border:0"><br></center><br>我痴情守望<br><center><br><img src="/img/zhen/11.jpg" style="border:0"><br></center><br>候你<br><center><br><img src="/img/zhen/12.jpg" style="border:0"><br></center><br>一场灵魂深处的相逢<br><center><br><img src="/img/zhen/13.jpg" style="border:0"><br></center>
+
+<p>研香为墨<br>执笔画心<br>把你藏在心中最柔软的地方<br>珍爱一生一世</p>
+<p>写你入诗<br>落字沉香</p>
+<blockquote>
+<p>宝贝，爱你</p>
+<hr>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=452612088&auto=1&height=66"></iframe></blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;&lt;br&gt;&lt;img src=&quot;/img/zhen/1.jpg&quot; style=&quot;border:0&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;光阴留痕&lt;br&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;/img/zhen/2.jpg&quot; style=&quot;border:0&quot;&gt;&lt;br
+    
+    </summary>
+    
+      <category term="love" scheme="http://yoursite.com/categories/love/"/>
+    
+    
+      <category term="love" scheme="http://yoursite.com/tags/love/"/>
+    
+  </entry>
+  
+  <entry>
     <title>阡陌和&amp;小鱼干儿</title>
     <link href="http://yoursite.com/2017/07/28/%E9%98%A1%E9%99%8C%E5%92%8C%E4%BB%96%E7%9A%84%E5%B0%8F%E9%B1%BC%E5%B9%B2%E5%84%BF/"/>
     <id>http://yoursite.com/2017/07/28/阡陌和他的小鱼干儿/</id>
     <published>2017-07-28T06:51:37.000Z</published>
-    <updated>2017-07-28T07:21:33.712Z</updated>
+    <updated>2017-08-18T01:24:43.750Z</updated>
     
     <content type="html"><![CDATA[<p><center><br><img src="/img/wendao0.jpg" style="border:0"><br></center><br>蒹葭苍苍</p>
 <p><center><br><img src="/img/wendao1.jpg" style="border:0"><br></center><br>白露为霜</p>
@@ -29,7 +59,7 @@
 <blockquote>
 <p>回到最初的时光</p>
 <hr>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=167876&auto=1&height=66"></iframe></blockquote>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=167876&auto=0&height=66"></iframe></blockquote>
 ]]></content>
     
     <summary type="html">
